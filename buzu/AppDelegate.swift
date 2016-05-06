@@ -16,6 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        ServiceManager.sharedInstance.authenticateOnAPI { (result, err) in
+            if (err != nil) {
+                print(err)
+            }else {
+                if result == "true" {
+                    print(result)
+                }
+            }
+        }
+        
         return true
     }
 
