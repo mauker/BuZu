@@ -87,7 +87,7 @@
         <scene sceneID="P1e-f7-qMq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PM0-7b-mBZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Recent" id="ne7-M4-UP8"/>
+                    <tabBarItem key="tabBarItem" title="Recent" image="recent" selectedImage="recent" id="ne7-M4-UP8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="1B6-gY-HlO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -110,7 +110,7 @@
         <scene sceneID="E7c-bJ-Qa7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d4W-9p-Vyr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" id="2Z2-xs-CaO"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="search" selectedImage="search" id="2Z2-xs-CaO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="7S2-1x-kfx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -133,7 +133,7 @@
         <scene sceneID="rWt-9N-RzY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Om-l0-0bf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" id="FXK-R0-dtY"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="feed" selectedImage="feed" id="FXK-R0-dtY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="nMf-T8-cbM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -153,4 +153,9 @@
             <point key="canvasLocation" x="1212" y="1759"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="feed" width="32" height="32"/>
+        <image name="recent" width="32" height="32"/>
+        <image name="search" width="32" height="32"/>
+    </resources>
 </document>
