@@ -1,0 +1,5 @@
+.DS_Store
+Pods/*
+buzu.xcodeproj/project.xcworkspace/*
+buzu.xcodeproj/xcuserdata/*
+buzu.xcworkspace/*
