@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1uF-8j-oqn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1uF-8j-oqn">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -65,13 +65,15 @@
         <!--Tab Bar Controller-->
         <scene sceneID="NzB-IZ-5M7">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="1uF-8j-oqn" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="1uF-8j-oqn" customClass="BZTabBarController" customModule="buzu" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="L7z-1P-urK">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.32156862745098036" green="0.19607843137254902" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="PM0-7b-mBZ" kind="relationship" relationship="viewControllers" id="UPH-Pn-YYq"/>
@@ -133,9 +135,7 @@
         <scene sceneID="rWt-9N-RzY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Om-l0-0bf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" image="feed" selectedImage="feed" id="FXK-R0-dtY">
-                        <inset key="imageInsets" minX="3" minY="3" maxX="3" maxY="3"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Feed" image="feed" selectedImage="feed" id="FXK-R0-dtY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="nMf-T8-cbM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
