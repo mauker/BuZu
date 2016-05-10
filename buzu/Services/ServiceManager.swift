@@ -35,8 +35,8 @@ class ServiceManager {
         
     }
     
-    func uptadePosition(lineCode:Int, callback: (JSON, String?) -> Void) {
-        let URLString = kBaseURL + kPositionURL + String(lineCode)
+    func uptadePosition(laneCode:Int, callback: (JSON, String?) -> Void) {
+        let URLString = kBaseURL + kPositionURL + String(laneCode)
         makeHttpGetRequest(URLString) { (result, err) in
             callback(result, err)
         }

@@ -33,8 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             print(err)
                         }else {
                             
-                            let lineCode = result[0]["CodigoLinha"].int
-                            ServiceManager.sharedInstance.uptadePosition(lineCode!, callback: { (result, err) in
+                            let laneCode = result[0]["CodigoLinha"].int
+                            ServiceManager.sharedInstance.uptadePosition(laneCode!, callback: { (result, err) in
                                 if err != nil {
                                     print(err)
                                 }else {

@@ -17,6 +17,7 @@
 		01AD7EE91CDCD91000211144 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD7EE81CDCD91000211144 /* Constants.swift */; };
 		01AD7EEB1CDCDF0200211144 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD7EEA1CDCDF0200211144 /* SearchViewController.swift */; };
 		01AD7EF11CE088F900211144 /* BZTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD7EF01CE088F900211144 /* BZTabBarController.swift */; };
+		01E0F1D71CE22D86009B2147 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0F1D61CE22D86009B2147 /* AppManager.swift */; };
 		934CB61231656E21393E951F /* Pods_buzu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74428ED52B1BDF69F5678ACB /* Pods_buzu.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		01AD7EE81CDCD91000211144 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Services/Constants.swift; sourceTree = "<group>"; };
 		01AD7EEA1CDCDF0200211144 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Controller/SearchViewController.swift; sourceTree = "<group>"; };
 		01AD7EF01CE088F900211144 /* BZTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BZTabBarController.swift; sourceTree = "<group>"; };
+		01E0F1D61CE22D86009B2147 /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppManager.swift; path = Services/AppManager.swift; sourceTree = "<group>"; };
 		74428ED52B1BDF69F5678ACB /* Pods_buzu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buzu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B5EC33B1AFAE2E61862B714 /* Pods-buzu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-buzu/Pods-buzu.debug.xcconfig"; sourceTree = "<group>"; };
 		E63D9FEBF0DB337C22C4D225 /* Pods-buzu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzu.release.xcconfig"; path = "Pods/Target Support Files/Pods-buzu/Pods-buzu.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				01AD7EE81CDCD91000211144 /* Constants.swift */,
+				01E0F1D61CE22D86009B2147 /* AppManager.swift */,
 				01AD7EE61CDCD8E400211144 /* ServiceManager.swift */,
 			);
 			name = Service;
@@ -367,6 +370,7 @@
 				01AD7EEB1CDCDF0200211144 /* SearchViewController.swift in Sources */,
 				01AD7EB81CDCD57300211144 /* AppDelegate.swift in Sources */,
 				01AD7EE71CDCD8E400211144 /* ServiceManager.swift in Sources */,
+				01E0F1D71CE22D86009B2147 /* AppManager.swift in Sources */,
 				01AD7EF11CE088F900211144 /* BZTabBarController.swift in Sources */,
 				01AD7EE91CDCD91000211144 /* Constants.swift in Sources */,
 			);
