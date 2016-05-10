@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.lightGrayColor()], forState:.Normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState:.Selected)
@@ -25,7 +25,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(err)
             }else {
                 if result == "true" {
+                    
                     print(result)
+                    
+                    ServiceManager.sharedInstance.searchForBus("Paulista", callback: { (result, err) in
+                        if (err != nil) {
+                            print(err)
+                        }else {
+                            
+                            let lineCode = result[0]["CodigoLinha"].int
+                            ServiceManager.sharedInstance.uptadePosition(lineCode!, callback: { (result, err) in
+                                if err != nil {
+                                    print(err)
+                                }else {
+                                    print(result)
+                                }
+                            })
+                            
+                        }
+                    })
+  
                 }
             }
         }

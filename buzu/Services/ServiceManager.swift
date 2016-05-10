@@ -26,18 +26,61 @@ class ServiceManager {
         
     }
     
-    func makeHttpGetRequest(URLString: String!, callback: (String, String?) -> Void){
+    func searchForBus(searchTerm:String, callback: (JSON, String?) -> Void){
+        
+        let URLString = kBaseURL + kSearchURL + searchTermRegex(searchTerm)
+        makeHttpGetRequest(URLString) { (result, err) in
+            callback(result, err)
+        }
+        
+    }
+    
+    func uptadePosition(lineCode:Int, callback: (JSON, String?) -> Void) {
+        let URLString = kBaseURL + kPositionURL + String(lineCode)
+        makeHttpGetRequest(URLString) { (result, err) in
+            callback(result, err)
+        }
+    }
+    
+    func searchTermRegex(searchTerm:String) -> String {
+        
+        var tempString:String = searchTerm
+    
+        let replace:NSDictionary = ["Â":"A", "À":"A", "Á":"A", "Ä":"A", "Ã":"A",
+                                    "â":"a", "ã":"a", "à":"a", "á":"a", "ä":"a",
+                                    "Ê":"E", "È":"E", "É":"E", "Ë":"E",
+                                    "ê":"e", "è":"e", "é":"e", "ë":"e",
+                                    "Î":"I", "Í":"I", "Ì":"I", "Ï":"I",
+                                    "î":"i", "í":"i", "ì":"i", "ï":"i",
+                                    "Ô":"O", "Õ":"O", "Ò":"O", "Ó":"O", "Ö":"O",
+                                    "ô":"o", "õ":"o", "ò":"o", "ó":"o", "ö":"o",
+                                    "Û":"U", "Ù":"U", "Ú":"U", "Ü":"U",
+                                    "û":"u", "ú":"u", "ù":"u", "ü":"u",
+                                    "ç":"c", "Ç":"C", " ":"+"
+        ]
+        
+        for key in replace.allKeys {
+            let keyStr = key as! String
+            let keyToReplace = replace.objectForKey(keyStr) as! String
+            tempString = tempString.stringByReplacingOccurrencesOfString(keyStr, withString: keyToReplace)
+        }
+        
+        return tempString
+        
+    }
+    
+    func makeHttpGetRequest(URLString: String!, callback: (JSON, String?) -> Void){
         
         let request = NSMutableURLRequest(URL: NSURL(string: URLString)!)
         
         let task = session.dataTaskWithRequest(request){
             (data, response, error) -> Void in
+            
             if error != nil {
                 callback("", error!.localizedDescription)
             } else {
-                let result = NSString(data: data!, encoding:
-                    NSASCIIStringEncoding)!
-                callback(result as String, nil)
+                let json = JSON(data: data!)
+                callback(json, nil)
             }
         }
         task.resume()
