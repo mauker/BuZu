@@ -25,10 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(err)
             }else {
                 if result == "true" {
+                    ServiceManager.sharedInstance.searchForBus("Itaim Bibi", callback: { (result, err) in
                     
-                    print(result)
-                    
-                    ServiceManager.sharedInstance.searchForBus("Paulista", callback: { (result, err) in
                         if (err != nil) {
                             print(err)
                         }else {
@@ -40,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                 }else {
                                     print(result)
                                 }
+                                
                             })
                             
                         }

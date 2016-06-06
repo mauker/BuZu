@@ -63,5 +63,6 @@ class appManager {
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         let viewController =  UIApplication.sharedApplication().keyWindow?.rootViewController
         viewController?.presentViewController(alert, animated: true, completion: nil)
+        
     }
 }

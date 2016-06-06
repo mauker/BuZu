@@ -9,8 +9,6 @@
 import Foundation
 import SwiftyJSON
 
-typealias ServiceResponse = (JSON, NSError?) -> Void
-
 class ServiceManager {
     
     static let sharedInstance = ServiceManager()
@@ -29,6 +27,7 @@ class ServiceManager {
     func searchForBus(searchTerm:String, callback: (JSON, String?) -> Void){
         
         let URLString = kBaseURL + kSearchURL + searchTermRegex(searchTerm)
+        print(URLString)
         makeHttpGetRequest(URLString) { (result, err) in
             callback(result, err)
         }
@@ -65,7 +64,7 @@ class ServiceManager {
             tempString = tempString.stringByReplacingOccurrencesOfString(keyStr, withString: keyToReplace)
         }
         
-        return tempString
+        return tempString.lowercaseString
         
     }
     
@@ -100,12 +99,12 @@ class ServiceManager {
             
             for key in Params.allKeys {
                 let keyStr = key as! String
-                let test = Params.objectForKey(keyStr) as! String
+                let param = Params.objectForKey(keyStr) as! String
                 
                 if i == 0 {
-                    paramString = keyStr+"="+test
+                    paramString = keyStr+"="+param
                 }else {
-                    paramString = paramString! + "&"+keyStr+"="+test
+                    paramString = paramString! + "&"+keyStr+"="+param
                 }
                 
                 i += 1

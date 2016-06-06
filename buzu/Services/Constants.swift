@@ -16,5 +16,5 @@ let kConsumerSecret = "OQXq250a9SAOetXuQg4w1vTzVCXAuNX1cxSVh5AvnQlWRwLO9w"
 let kBaseURL = "http://api.olhovivo.sptrans.com.br/v0/"
 let kAuthenticationURL = "Login/Autenticar?token="
 let kSearchURL = "Linha/Buscar?termosBusca="
-let kPositionURL = "Posicao?codigoLinha=" //{codigoLinha} INT
-let kStopsURL = "Parada/BuscarParadasPorLinha?codigoLinha="//{codigoLinha} INT"
+let kPositionURL = "Posicao?codigoLinha=" //{LaneCode} INT
+let kStopsURL = "Parada/BuscarParadasPorLinha?codigoLinha="//{LaneCode} INT"
