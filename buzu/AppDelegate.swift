@@ -20,33 +20,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.lightGrayColor()], forState:.Normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState:.Selected)
         
-        ServiceManager.sharedInstance.authenticateOnAPI { (result, err) in
-            if (err != nil) {
-                print(err)
-            }else {
-                if result == "true" {
-                    ServiceManager.sharedInstance.searchForBus("Itaim Bibi", callback: { (result, err) in
-                    
-                        if (err != nil) {
-                            print(err)
-                        }else {
-                            
-                            let laneCode = result[0]["CodigoLinha"].int
-                            ServiceManager.sharedInstance.uptadePosition(laneCode!, callback: { (result, err) in
-                                if err != nil {
-                                    print(err)
-                                }else {
-                                    print(result)
-                                }
-                                
-                            })
-                            
-                        }
-                    })
-  
-                }
-            }
-        }
+//        ServiceManager.sharedInstance.authenticateOnAPI { (result, err) in
+//            if (err != nil) {
+//                print(err)
+//            }else {
+//                if result == "true" {
+//                    ServiceManager.sharedInstance.searchForBus("Itaim Bibi", callback: { (result, err) in
+//                    
+//                        if (err != nil) {
+//                            print(err)
+//                        }else {
+//                            
+//                            let laneCode = result[0]["CodigoLinha"].int
+//                            ServiceManager.sharedInstance.uptadePosition(laneCode!, callback: { (result, err) in
+//                                if err != nil {
+//                                    print(err)
+//                                }else {
+//                                    print(result)
+//                                }
+//                                
+//                            })
+//                            
+//                        }
+//                    })
+//  
+//                }
+//            }
+//        }
         
         return true
     }

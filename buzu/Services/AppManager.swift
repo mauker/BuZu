@@ -8,8 +8,9 @@
 
 import UIKit
 
-class appManager {
+class AppManager {
     
+    static let sharedInstance = AppManager()
     let defaults = NSUserDefaults.standardUserDefaults()
     
     func updateRecentsWithBusLane(busLane:NSDictionary) -> Void {

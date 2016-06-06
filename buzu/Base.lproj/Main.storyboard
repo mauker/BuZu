@@ -8,7 +8,7 @@
         <!--Feed-->
         <scene sceneID="DRh-Uf-dtP">
             <objects>
-                <viewController id="Voi-ag-GD7" sceneMemberID="viewController">
+                <viewController id="Voi-ag-GD7" customClass="FeedViewController" customModule="buzu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dFP-SA-MLk"/>
                         <viewControllerLayoutGuide type="bottom" id="u5g-lC-Ugq"/>
@@ -27,7 +27,7 @@
         <!--Recent-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RecentViewController" customModule="buzu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -54,9 +54,28 @@
                     <view key="view" contentMode="scaleToFill" id="ZLW-Nx-csb">
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kY0-1V-wFg">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9Gv-5l-hnF" id="Qwa-3M-82t"/>
+                                    <outlet property="delegate" destination="9Gv-5l-hnF" id="F53-2Y-s7L"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kY0-1V-wFg" firstAttribute="bottom" secondItem="UpZ-LI-EWe" secondAttribute="top" id="OXG-X6-AGq"/>
+                            <constraint firstItem="kY0-1V-wFg" firstAttribute="top" secondItem="OZr-EU-vL0" secondAttribute="bottom" id="iNJ-aE-4gx"/>
+                            <constraint firstAttribute="trailing" secondItem="kY0-1V-wFg" secondAttribute="trailing" id="oph-is-GbA"/>
+                            <constraint firstItem="kY0-1V-wFg" firstAttribute="leading" secondItem="ZLW-Nx-csb" secondAttribute="leading" id="sg0-w7-tGf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="OhE-jj-hWI" customClass="Favorites"/>
+                    <connections>
+                        <outlet property="tableView" destination="kY0-1V-wFg" id="KKf-cO-QIf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6K-E9-2XX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -85,11 +104,11 @@
             </objects>
             <point key="canvasLocation" x="446" y="1042"/>
         </scene>
-        <!--Recent-->
+        <!--Recentes-->
         <scene sceneID="P1e-f7-qMq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PM0-7b-mBZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Recent" image="recent" selectedImage="recent" id="ne7-M4-UP8"/>
+                    <tabBarItem key="tabBarItem" title="Recentes" image="recent" selectedImage="recent" id="ne7-M4-UP8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="1B6-gY-HlO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -108,11 +127,11 @@
             </objects>
             <point key="canvasLocation" x="1212" y="320"/>
         </scene>
-        <!--Search-->
+        <!--Procurar-->
         <scene sceneID="E7c-bJ-Qa7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d4W-9p-Vyr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="search" selectedImage="search" id="2Z2-xs-CaO"/>
+                    <tabBarItem key="tabBarItem" title="Procurar" image="search" selectedImage="search" id="2Z2-xs-CaO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="7S2-1x-kfx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -131,11 +150,11 @@
             </objects>
             <point key="canvasLocation" x="1212" y="1042"/>
         </scene>
-        <!--Feed-->
+        <!--SPTrans-->
         <scene sceneID="rWt-9N-RzY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Om-l0-0bf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" image="feed" selectedImage="feed" id="FXK-R0-dtY"/>
+                    <tabBarItem key="tabBarItem" title="SPTrans" image="feed" selectedImage="feed" id="FXK-R0-dtY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="nMf-T8-cbM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
