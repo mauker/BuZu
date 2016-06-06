@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		019561441D05CB48000178D1 /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019561431D05CB48000178D1 /* RecentViewController.swift */; };
+		019561461D05CB88000178D1 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019561451D05CB88000178D1 /* FeedViewController.swift */; };
 		01AD7EB81CDCD57300211144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD7EB71CDCD57300211144 /* AppDelegate.swift */; };
 		01AD7EBD1CDCD57300211144 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01AD7EBB1CDCD57300211144 /* Main.storyboard */; };
 		01AD7EBF1CDCD57300211144 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01AD7EBE1CDCD57300211144 /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		019561431D05CB48000178D1 /* RecentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecentViewController.swift; path = Controllers/RecentViewController.swift; sourceTree = "<group>"; };
+		019561451D05CB88000178D1 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedViewController.swift; path = Controllers/FeedViewController.swift; sourceTree = "<group>"; };
 		01AD7EB41CDCD57300211144 /* buzu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buzu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01AD7EB71CDCD57300211144 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01AD7EBC1CDCD57300211144 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				01E0F1D91CE33A41009B2147 /* SearchViewController.swift */,
+				019561431D05CB48000178D1 /* RecentViewController.swift */,
+				019561451D05CB88000178D1 /* FeedViewController.swift */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -383,10 +389,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				01E0F1DA1CE33A41009B2147 /* SearchViewController.swift in Sources */,
+				019561461D05CB88000178D1 /* FeedViewController.swift in Sources */,
 				01AD7EB81CDCD57300211144 /* AppDelegate.swift in Sources */,
 				01AD7EE71CDCD8E400211144 /* ServiceManager.swift in Sources */,
 				01E0F1D71CE22D86009B2147 /* AppManager.swift in Sources */,
 				01E0F1DE1CE33A8A009B2147 /* BusLaneTableViewCell.swift in Sources */,
+				019561441D05CB48000178D1 /* RecentViewController.swift in Sources */,
 				01AD7EF11CE088F900211144 /* BZTabBarController.swift in Sources */,
 				01AD7EE91CDCD91000211144 /* Constants.swift in Sources */,
 			);
