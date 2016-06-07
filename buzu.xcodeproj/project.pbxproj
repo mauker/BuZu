@@ -95,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		019561471D06C898000178D1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				01AD7EB71CDCD57300211144 /* AppDelegate.swift */,
+				01AD7EF01CE088F900211144 /* BZTabBarController.swift */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
 		01AD7EAB1CDCD57300211144 = {
 			isa = PBXGroup;
 			children = (
@@ -120,8 +129,7 @@
 		01AD7EB61CDCD57300211144 /* buzu */ = {
 			isa = PBXGroup;
 			children = (
-				01AD7EB71CDCD57300211144 /* AppDelegate.swift */,
-				01AD7EF01CE088F900211144 /* BZTabBarController.swift */,
+				019561471D06C898000178D1 /* App */,
 				01AD7EE51CDCD8CB00211144 /* Service */,
 				01AD7EEC1CDCDF5300211144 /* Controllers */,
 				01AD7EBB1CDCD57300211144 /* Main.storyboard */,

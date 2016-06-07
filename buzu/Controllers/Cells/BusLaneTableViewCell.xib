@@ -22,8 +22,8 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metrô Vila Mariana" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5XE-Od-sNs">
-                        <rect key="frame" x="15" y="30" width="143" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="15" y="30" width="126.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                         <color key="textColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -39,11 +39,11 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="5XE-Od-sNs" firstAttribute="top" secondItem="efn-id-xZD" secondAttribute="bottom" constant="-1" id="4xD-N7-Beb"/>
+                    <constraint firstItem="8US-xs-TOq" firstAttribute="top" secondItem="5XE-Od-sNs" secondAttribute="bottom" constant="4" id="3lK-1Z-sue"/>
+                    <constraint firstItem="5XE-Od-sNs" firstAttribute="leading" secondItem="hhA-j4-rSw" secondAttribute="leadingMargin" constant="7" id="Ie7-45-cVc"/>
+                    <constraint firstItem="5XE-Od-sNs" firstAttribute="top" secondItem="efn-id-xZD" secondAttribute="bottom" constant="-1" id="T2W-XI-PPQ"/>
                     <constraint firstAttribute="bottomMargin" secondItem="8US-xs-TOq" secondAttribute="bottom" constant="-3.5" id="bOV-4d-7h9"/>
                     <constraint firstAttribute="topMargin" secondItem="efn-id-xZD" secondAttribute="top" id="j13-ZT-gBQ"/>
-                    <constraint firstItem="8US-xs-TOq" firstAttribute="top" secondItem="5XE-Od-sNs" secondAttribute="bottom" constant="0.5" id="kpi-nh-elv"/>
-                    <constraint firstAttribute="leadingMargin" secondItem="5XE-Od-sNs" secondAttribute="leading" constant="-7" id="rFE-uR-gNl"/>
                     <constraint firstItem="4go-EY-nrN" firstAttribute="top" secondItem="hhA-j4-rSw" secondAttribute="topMargin" constant="20" id="uNr-t2-uBC"/>
                     <constraint firstAttribute="leadingMargin" secondItem="8US-xs-TOq" secondAttribute="leading" constant="-7" id="uTJ-br-wZh"/>
                     <constraint firstAttribute="trailingMargin" secondItem="4go-EY-nrN" secondAttribute="trailing" constant="7" id="wem-vO-ghZ"/>

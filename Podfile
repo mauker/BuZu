@@ -5,6 +5,7 @@ use_frameworks!
 
 target 'buzu' do
 pod 'SwiftyJSON'
+pod 'Mantle'
 end
 
 target 'buzuTests' do

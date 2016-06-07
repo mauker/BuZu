@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 protocol BusLaneTableViewCellDelegate{
     func didTouchFavoriteForCell(cell:BusLaneTableViewCell)
@@ -21,18 +22,25 @@ class BusLaneTableViewCell: UITableViewCell {
     @IBOutlet weak var lineDirectionImage: UIImageView!
     @IBOutlet weak var lineFavoriteButton: UIButton!
     
-    func setUpBusLaneCell(lineNumber:String, lineName:String, lineDirection:NSNumber, isFavorite:Bool) {
+    func setUpBusLaneCell(busLane:JSON) {
         
-        self.lineNumberLabel.text = lineNumber;
-        self.lineNameLabel.text = lineName;
+        print(busLane)
         
-        let directionImage = lineDirection == 1 ? UIImage(named:"back_arrow"):UIImage(named:"forward_arrow")
+        let fullLineNumber = busLane["Letreiro"].string! + "-" + String(busLane["Tipo"].number!)
+        self.lineNumberLabel.text = fullLineNumber;
         
-        self.lineDirectionImage.image = directionImage
+        if (busLane["Sentido"].number == 1) {//FORWARD
+            self.lineNameLabel.text = busLane["DenominacaoTPTS"].string;
+            self.lineDirectionImage.image = UIImage(named:"forward_arrow")
+        }else {//BACKWARD
+            self.lineNameLabel.text = busLane["DenominacaoTSTP"].string;
+            self.lineDirectionImage.image = UIImage(named:"back_arrow")
+        }
         
-        let favImage = isFavorite == false ? UIImage(named:"star_empty"):UIImage(named:"star_full")
         
-        self.lineFavoriteButton.setImage(favImage, forState: UIControlState.Normal)
+//        let favImage = isFavorite == false ? UIImage(named:"star_empty"):UIImage(named:"star_full")
+//        
+//        self.lineFavoriteButton.setImage(favImage, forState: UIControlState.Normal)
     }
     
     @IBAction func didTouchFavoriteButton(sender: UIButton) {

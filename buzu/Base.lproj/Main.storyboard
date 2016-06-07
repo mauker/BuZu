@@ -72,7 +72,7 @@
                             <constraint firstItem="kY0-1V-wFg" firstAttribute="leading" secondItem="ZLW-Nx-csb" secondAttribute="leading" id="sg0-w7-tGf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Search" id="OhE-jj-hWI" customClass="Favorites"/>
+                    <navigationItem key="navigationItem" title="Search" id="OhE-jj-hWI"/>
                     <connections>
                         <outlet property="tableView" destination="kY0-1V-wFg" id="KKf-cO-QIf"/>
                     </connections>

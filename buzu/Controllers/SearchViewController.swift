@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, BusLaneTableViewCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
 
-    
+    var searchResults:JSON = []
     lazy var searchBar = UISearchBar(frame: CGRectZero)
     
     override func viewDidLoad() {
@@ -35,7 +36,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         return true
     }
     
-    func searchForBusLane(searchTerm:String) -> NSArray {
+    func searchForBusLane(searchTerm:String) {
         
         ServiceManager.sharedInstance.authenticateOnAPI { (result, err) in
         
@@ -52,7 +53,11 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
                         if (err != nil) {
                             AppManager.sharedInstance.showAlertView("Erro", message: err!)
                         }else {
-                            print(result)
+                            self.searchResults = result
+                            dispatch_async(dispatch_get_main_queue()) {
+                                self.tableView.reloadData()
+                            }
+                            
                         }
                     })
  
@@ -61,22 +66,19 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
                 }
                 
             }
-            
-            
         
         }
         
-        return []
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         
-//        if searchBar.text.length > 2 {
-//            
+//        if searchBar.text?.characters.count <= 1 {
+//            AppManager.sharedInstance.showAlertView("Erro", message:"A pesquisa está vazia.")
+//            return
 //        }
         
         self.searchForBusLane(searchBar.text!)
-        searchBar.text = ""
         self.becomeFirstResponder()
     }
     
@@ -86,7 +88,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.searchResults.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -94,8 +96,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         let cell :BusLaneTableViewCell = tableView.dequeueReusableCellWithIdentifier("BusLaneCell") as! BusLaneTableViewCell
         
         cell.delegate = self
-        
-        cell.setUpBusLaneCell("123232", lineName: "Metro Vila Mariana", lineDirection: 1, isFavorite: false)
+        cell.setUpBusLaneCell(self.searchResults[indexPath.row])
         
         return cell
         
