@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Feed-->
+        <!--Notícias-->
         <scene sceneID="DRh-Uf-dtP">
             <objects>
                 <viewController id="Voi-ag-GD7" customClass="FeedViewController" customModule="buzu" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Feed" id="6zO-7k-H26"/>
+                    <navigationItem key="navigationItem" title="Notícias" id="6zO-7k-H26"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="04k-BI-GDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2024" y="1759"/>
         </scene>
-        <!--Recent-->
+        <!--Recentes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="RecentViewController" customModule="buzu" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,13 +37,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Recent" id="HME-CG-BzF"/>
+                    <navigationItem key="navigationItem" title="Recentes" id="HME-CG-BzF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2024" y="320"/>
         </scene>
-        <!--Search-->
+        <!--Procurar-->
         <scene sceneID="f99-Hk-bOc">
             <objects>
                 <viewController id="9Gv-5l-hnF" customClass="SearchViewController" customModule="buzu" customModuleProvider="target" sceneMemberID="viewController">
@@ -55,7 +55,7 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kY0-1V-wFg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kY0-1V-wFg">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -72,7 +72,7 @@
                             <constraint firstItem="kY0-1V-wFg" firstAttribute="leading" secondItem="ZLW-Nx-csb" secondAttribute="leading" id="sg0-w7-tGf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Search" id="OhE-jj-hWI"/>
+                    <navigationItem key="navigationItem" title="Procurar" id="OhE-jj-hWI"/>
                     <connections>
                         <outlet property="tableView" destination="kY0-1V-wFg" id="KKf-cO-QIf"/>
                     </connections>
@@ -113,6 +113,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="1B6-gY-HlO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.32156862749999998" green="0.1960784314" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -136,6 +137,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="7S2-1x-kfx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.32156862749999998" green="0.1960784314" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -159,6 +161,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="nMf-T8-cbM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.32156862749999998" green="0.1960784314" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

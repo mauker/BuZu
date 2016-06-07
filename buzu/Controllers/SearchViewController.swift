@@ -12,7 +12,8 @@ import SwiftyJSON
 class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, BusLaneTableViewCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-
+    
+    var shouldShowPlaceholder:Bool = true
     var searchResults:JSON = []
     lazy var searchBar = UISearchBar(frame: CGRectZero)
     
@@ -20,11 +21,15 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         super.viewDidLoad()
         searchBar.placeholder = "Procurar"
         searchBar.delegate = self
+        searchBar.tintColor = UIColor.blackColor()
         navigationItem.titleView = searchBar
         
         self.tableView.registerNib(UINib.init(nibName:"BusLaneTableViewCell", bundle: nil), forCellReuseIdentifier: "BusLaneCell")
+        self.tableView.registerNib(UINib.init(nibName:"PlaceholderTableViewCell", bundle: nil), forCellReuseIdentifier: "PlaceholderCell")
         self.tableView.estimatedRowHeight = 80;
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,10 +58,27 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
                         if (err != nil) {
                             AppManager.sharedInstance.showAlertView("Erro", message: err!)
                         }else {
-                            self.searchResults = result
-                            dispatch_async(dispatch_get_main_queue()) {
-                                self.tableView.reloadData()
+                            
+                            if result.array?.count >= 1 {
+                
+                                self.searchResults = result
+                                self.shouldShowPlaceholder = false
+                                self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+                                dispatch_async(dispatch_get_main_queue()) {
+                                    self.tableView.reloadData()
+                                }
+                                
+                            }else {
+                                //self.shouldShowPlaceholder = true
+                                dispatch_async(dispatch_get_main_queue()) {
+                                    AppManager.sharedInstance.showAlertView("BuZu", message: "Não foi possível encontrar nenhuma linha para sua pesquisa")
+                                    //self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+                                    //self.tableView.reloadData()
+                                }
+                                
                             }
+                            
+                           
                             
                         }
                     })
@@ -88,10 +110,16 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.searchResults.count
+        return shouldShowPlaceholder ? 1 : self.searchResults.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        if shouldShowPlaceholder == true {
+            let cell :PlaceholderTableViewCell = tableView.dequeueReusableCellWithIdentifier("PlaceholderCell") as! PlaceholderTableViewCell
+            cell.userInteractionEnabled = false
+            return cell
+        }
         
         let cell :BusLaneTableViewCell = tableView.dequeueReusableCellWithIdentifier("BusLaneCell") as! BusLaneTableViewCell
         

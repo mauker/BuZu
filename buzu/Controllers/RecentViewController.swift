@@ -10,14 +10,38 @@ import UIKit
 
 class RecentViewController: UIViewController {
     
+    var isShowingRecents:Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.title = "Recentes"
+        let image = UIImage(named:"star_nav")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action:#selector(RecentViewController.toggleRecentFavorites))
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func toggleRecentFavorites() {
+        
+        var image:UIImage
+        
+        if isShowingRecents == true {
+            self.title = "Favoritos"
+            image = UIImage(named:"recent")!
+            isShowingRecents = false
+            //TODO: Change Array to show Favorites and reload the tableview
+        }else {
+            self.title = "Recentes"
+            image = UIImage(named:"star_nav")!
+            isShowingRecents = true
+            //TODO: Change Array to show Recents and reload the tableview
+        }
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action:#selector(RecentViewController.toggleRecentFavorites))
+        
     }
     
 }
