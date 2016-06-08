@@ -194,10 +194,10 @@
 		01E0F1D81CE33981009B2147 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				01E0F1DB1CE33A7D009B2147 /* BusLaneTableViewCell.xib */,
-				01E0F1DD1CE33A8A009B2147 /* BusLaneTableViewCell.swift */,
 				019561561D072571000178D1 /* PlaceholderTableViewCell.swift */,
 				019561581D072585000178D1 /* PlaceholderTableViewCell.xib */,
+				01E0F1DD1CE33A8A009B2147 /* BusLaneTableViewCell.swift */,
+				01E0F1DB1CE33A7D009B2147 /* BusLaneTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";

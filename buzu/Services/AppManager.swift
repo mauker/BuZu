@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class AppManager {
     
@@ -34,29 +35,95 @@ class AppManager {
         
     }
     
-    func addFavoriteBusLane(busLane:NSDictionary) -> Void {
+    func addFavoriteBusLane(busLane:JSON) -> Void {
         
-        let favLanes:NSMutableDictionary = defaults.objectForKey("favLanes") as! NSMutableDictionary
-        let laneCode:String = busLane.objectForKey("CodigoLinha") as! String
+        let key:String = String(busLane["CodigoLinha"].number!)
         
-        if (favLanes.objectForKey(laneCode) != nil) {
-            favLanes.setObject(busLane, forKey: laneCode)
-            defaults.synchronize()
-            showAlertView("Favoritos", message: "Linha adicionada aos favoritos!")
+        let busDict = busLane.rawString()
+        let busToAdd:NSDictionary = [key:busDict!]
+        
+        if defaults.objectForKey("favLanes") == nil {
+            
+            let lanesArray:NSArray = [busToAdd]
+            defaults.setObject(lanesArray, forKey:"favLanes")
+            
+        }else {
+            
+            let lanesArray:NSMutableArray = NSMutableArray.init(array: defaults.objectForKey("favLanes") as! NSArray)
+            lanesArray.addObject(busToAdd)
+            defaults.setObject(lanesArray, forKey:"favLanes")
+            
         }
- 
+        
+        defaults.synchronize()
     }
     
-    func removeFavoriteBusLane(laneCode:String) -> Void {
-
-        let favLanes:NSMutableDictionary = defaults.objectForKey("favLanes") as! NSMutableDictionary
+    func removeFavoriteBusLane(busLane:JSON) -> Void {
         
-        if (favLanes.objectForKey(laneCode) != nil) {
-            favLanes.removeObjectForKey(laneCode)
-            defaults.synchronize()
-            showAlertView("Favoritos", message: "Linha removida dos favoritos!")
+        let lanesArray:NSMutableArray = NSMutableArray.init(array: defaults.objectForKey("favLanes") as! NSArray)
+        
+        let key:String = String(busLane["CodigoLinha"].number!)
+        
+        for item in lanesArray {
+            
+            if (item.objectForKey(key) != nil) {
+                lanesArray.removeObject(item)
+            }
+            
         }
+        
+        defaults.setObject(lanesArray, forKey:"favLanes")
+        defaults.synchronize()
+        
+        
     }
+    
+    func busLaneIsFavorite(busLane:JSON) -> Bool {
+        
+        if defaults.objectForKey("favLanes") == nil {
+            return false
+        }
+        
+        let lanesArray:NSMutableArray = NSMutableArray.init(array: defaults.objectForKey("favLanes") as! NSArray)
+        
+        let key:String = String(busLane["CodigoLinha"].number!)
+        
+        for item in lanesArray {
+            
+            if (item.objectForKey(key) != nil) {
+                return true
+            }
+            
+        }
+        
+        return false
+        
+    }
+    
+    
+//    func addFavoriteBusLane(busLane:NSDictionary) -> Void {
+//        
+//        let favLanes:NSMutableDictionary = defaults.objectForKey("favLanes") as! NSMutableDictionary
+//        let laneCode:String = busLane.objectForKey("CodigoLinha") as! String
+//        
+//        if (favLanes.objectForKey(laneCode) != nil) {
+//            favLanes.setObject(busLane, forKey: laneCode)
+//            defaults.synchronize()
+//            showAlertView("Favoritos", message: "Linha adicionada aos favoritos!")
+//        }
+// 
+//    }
+//    
+//    func removeFavoriteBusLane(laneCode:String) -> Void {
+//
+//        let favLanes:NSMutableDictionary = defaults.objectForKey("favLanes") as! NSMutableDictionary
+//        
+//        if (favLanes.objectForKey(laneCode) != nil) {
+//            favLanes.removeObjectForKey(laneCode)
+//            defaults.synchronize()
+//            showAlertView("Favoritos", message: "Linha removida dos favoritos!")
+//        }
+//    }
     
     func showAlertView(title:String, message:String) -> Void {
         

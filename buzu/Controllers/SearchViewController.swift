@@ -43,11 +43,16 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     func searchForBusLane(searchTerm:String) {
         
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
         ServiceManager.sharedInstance.authenticateOnAPI { (result, err) in
         
             if err != nil {
                 
-                AppManager.sharedInstance.showAlertView("Erro", message: err!)
+                dispatch_async(dispatch_get_main_queue()) {
+                    AppManager.sharedInstance.showAlertView("Erro", message: err!)
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                }
                 
             }else{
                 
@@ -56,7 +61,14 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
                     ServiceManager.sharedInstance.searchForBus(searchTerm, callback: { (result, err) in
                         
                         if (err != nil) {
-                            AppManager.sharedInstance.showAlertView("Erro", message: err!)
+                            
+                            dispatch_async(dispatch_get_main_queue()) {
+                                
+                                AppManager.sharedInstance.showAlertView("Erro", message: err!)
+                                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                                
+                            }
+                            
                         }else {
                             
                             if result.array?.count >= 1 {
@@ -66,14 +78,15 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
                                 self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
                                 dispatch_async(dispatch_get_main_queue()) {
                                     self.tableView.reloadData()
+                                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                                 }
                                 
                             }else {
-                                //self.shouldShowPlaceholder = true
+
                                 dispatch_async(dispatch_get_main_queue()) {
                                     AppManager.sharedInstance.showAlertView("BuZu", message: "Não foi possível encontrar nenhuma linha para sua pesquisa")
-                                    //self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-                                    //self.tableView.reloadData()
+                                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+
                                 }
                                 
                             }
@@ -84,7 +97,15 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
                     })
  
                 } else {
-                   AppManager.sharedInstance.showAlertView("Erro", message:"SPTrans está offline no momento, tente novamente mais tarde.")
+                    
+                    dispatch_async(dispatch_get_main_queue()) {
+                        
+                        AppManager.sharedInstance.showAlertView("Erro", message:"SPTrans está offline no momento, tente novamente mais tarde.")
+                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                        
+                    }
+                    
+                   
                 }
                 
             }
@@ -94,11 +115,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        
-//        if searchBar.text?.characters.count <= 1 {
-//            AppManager.sharedInstance.showAlertView("Erro", message:"A pesquisa está vazia.")
-//            return
-//        }
         
         self.searchForBusLane(searchBar.text!)
         self.becomeFirstResponder()
@@ -136,7 +152,15 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     //MARK: CellDelegate
     func didTouchFavoriteForCell(cell: BusLaneTableViewCell) {
-        print("FAVORITE")
+        
+        if cell.isFavorite {
+            AppManager.sharedInstance.removeFavoriteBusLane(cell.busLane)
+        } else {
+           AppManager.sharedInstance.addFavoriteBusLane(cell.busLane)
+        }
+        
+        let index:NSIndexPath = self.tableView.indexPathForCell(cell)!
+        self.tableView.reloadRowsAtIndexPaths([index], withRowAnimation: UITableViewRowAnimation.Fade)
     }
     
 }

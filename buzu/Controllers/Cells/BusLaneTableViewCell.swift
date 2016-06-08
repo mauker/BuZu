@@ -16,6 +16,9 @@ protocol BusLaneTableViewCellDelegate{
 class BusLaneTableViewCell: UITableViewCell {
     
     var delegate:BusLaneTableViewCellDelegate! = nil
+    var busLane:JSON = nil
+    var isFavorite:Bool = false
+    
     
     @IBOutlet weak var lineNumberLabel: UILabel!
     @IBOutlet weak var lineNameLabel: UILabel!
@@ -24,6 +27,7 @@ class BusLaneTableViewCell: UITableViewCell {
     
     func setUpBusLaneCell(busLane:JSON) {
         
+        self.busLane = busLane
         print(busLane)
         
         let fullLineNumber = busLane["Letreiro"].string! + "-" + String(busLane["Tipo"].number!)
@@ -37,10 +41,13 @@ class BusLaneTableViewCell: UITableViewCell {
             self.lineDirectionImage.image = UIImage(named:"back_arrow")
         }
         
+        self.isFavorite = false
+        if AppManager.sharedInstance.busLaneIsFavorite(busLane) == true {
+            self.isFavorite = true
+        }
         
-//        let favImage = isFavorite == false ? UIImage(named:"star_empty"):UIImage(named:"star_full")
-//        
-//        self.lineFavoriteButton.setImage(favImage, forState: UIControlState.Normal)
+        let favImage = self.isFavorite == false ? UIImage(named:"star_empty"):UIImage(named:"star_full")
+        self.lineFavoriteButton.setImage(favImage, forState: UIControlState.Normal)
     }
     
     @IBAction func didTouchFavoriteButton(sender: UIButton) {
