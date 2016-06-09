@@ -1,15 +1,13 @@
 PODS:
-  - Mantle (2.0.7):
-    - Mantle/extobjc (= 2.0.7)
-  - Mantle/extobjc (2.0.7)
+  - Alamofire (3.4.0)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
-  - Mantle
+  - Alamofire (~> 3.4)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
+  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
 COCOAPODS: 0.39.0

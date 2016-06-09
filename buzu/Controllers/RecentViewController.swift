@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-class RecentViewController: UIViewController {
+class RecentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, BusLaneTableViewCellDelegate {
     
+    @IBOutlet weak var tableView: UITableView!
     var isShowingRecents:Bool = true
+    var dataArray:JSON = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dataArray = AppManager.sharedInstance.getFavorites()
+        
+        
         self.title = "Recentes"
         let image = UIImage(named:"star_nav")
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action:#selector(RecentViewController.toggleRecentFavorites))
@@ -43,5 +49,33 @@ class RecentViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action:#selector(RecentViewController.toggleRecentFavorites))
         
     }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dataArray.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell :BusLaneTableViewCell = tableView.dequeueReusableCellWithIdentifier("BusLaneCell") as! BusLaneTableViewCell
+        
+        cell.delegate = self
+        //cell.setUpBusLaneCell(self.searchResults[indexPath.row])
+        
+        return cell
+        
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func didTouchFavoriteForCell(cell: BusLaneTableViewCell) {
+        
+    }
+
     
 }

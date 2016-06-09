@@ -156,7 +156,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         if cell.isFavorite {
             AppManager.sharedInstance.removeFavoriteBusLane(cell.busLane)
         } else {
-           AppManager.sharedInstance.addFavoriteBusLane(cell.busLane)
+            AppManager.sharedInstance.addFavoriteBusLane(cell.busLane)
         }
         
         let index:NSIndexPath = self.tableView.indexPathForCell(cell)!

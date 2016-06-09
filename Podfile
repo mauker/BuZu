@@ -5,7 +5,7 @@ use_frameworks!
 
 target 'buzu' do
 pod 'SwiftyJSON'
-pod 'Mantle'
+pod 'Alamofire', '~> 3.4'
 end
 
 target 'buzuTests' do
