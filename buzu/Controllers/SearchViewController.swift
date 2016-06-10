@@ -21,7 +21,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         super.viewDidLoad()
         searchBar.placeholder = "Procurar"
         searchBar.delegate = self
-        searchBar.tintColor = UIColor.blackColor()
+        searchBar.tintColor = UIColor.init(colorLiteralRed: 82/255.0, green: 50/255.0, blue: 84/255.0, alpha: 1.0)
         navigationItem.titleView = searchBar
         
         self.tableView.registerNib(UINib.init(nibName:"BusLaneTableViewCell", bundle: nil), forCellReuseIdentifier: "BusLaneCell")
@@ -30,6 +30,11 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -134,6 +139,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         if shouldShowPlaceholder == true {
             let cell :PlaceholderTableViewCell = tableView.dequeueReusableCellWithIdentifier("PlaceholderCell") as! PlaceholderTableViewCell
             cell.userInteractionEnabled = false
+            cell.placeholderTitle.text = "Digite o nome ou o número da sua linha acima"
             return cell
         }
         

@@ -10,4 +10,6 @@ import UIKit
 
 class PlaceholderTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var placeholderTitle: UILabel!
+
 }

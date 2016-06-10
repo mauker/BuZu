@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="2024" y="1759"/>
         </scene>
-        <!--Recentes-->
+        <!--Favoritos-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RecentViewController" customModule="buzu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FavoritesViewController" customModule="buzu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -53,7 +53,7 @@
                             <constraint firstItem="TJh-tN-7wk" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Q2Q-7i-hnb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Recentes" id="HME-CG-BzF"/>
+                    <navigationItem key="navigationItem" title="Favoritos" id="HME-CG-BzF"/>
                     <connections>
                         <outlet property="tableView" destination="TJh-tN-7wk" id="xTL-qn-MwP"/>
                     </connections>
@@ -123,11 +123,11 @@
             </objects>
             <point key="canvasLocation" x="446" y="1042"/>
         </scene>
-        <!--Recentes-->
+        <!--Favoritos-->
         <scene sceneID="P1e-f7-qMq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PM0-7b-mBZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Recentes" image="recent" selectedImage="recent" id="ne7-M4-UP8"/>
+                    <tabBarItem key="tabBarItem" title="Favoritos" image="star" selectedImage="star" id="ne7-M4-UP8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="1B6-gY-HlO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -198,7 +198,7 @@
     </scenes>
     <resources>
         <image name="feed" width="25" height="25"/>
-        <image name="recent" width="25" height="25"/>
         <image name="search" width="25" height="25"/>
+        <image name="star" width="25" height="25"/>
     </resources>
 </document>

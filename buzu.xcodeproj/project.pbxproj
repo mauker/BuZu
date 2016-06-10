@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		019561441D05CB48000178D1 /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019561431D05CB48000178D1 /* RecentViewController.swift */; };
+		019561441D05CB48000178D1 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019561431D05CB48000178D1 /* FavoritesViewController.swift */; };
 		019561461D05CB88000178D1 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019561451D05CB88000178D1 /* FeedViewController.swift */; };
 		019561571D072571000178D1 /* PlaceholderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019561561D072571000178D1 /* PlaceholderTableViewCell.swift */; };
 		019561591D072585000178D1 /* PlaceholderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 019561581D072585000178D1 /* PlaceholderTableViewCell.xib */; };
@@ -45,7 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		019561431D05CB48000178D1 /* RecentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecentViewController.swift; path = Controllers/RecentViewController.swift; sourceTree = "<group>"; };
+		019561431D05CB48000178D1 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesViewController.swift; path = Controllers/FavoritesViewController.swift; sourceTree = "<group>"; };
 		019561451D05CB88000178D1 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedViewController.swift; path = Controllers/FeedViewController.swift; sourceTree = "<group>"; };
 		019561561D072571000178D1 /* PlaceholderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderTableViewCell.swift; path = Controllers/Cells/PlaceholderTableViewCell.swift; sourceTree = "<group>"; };
 		019561581D072585000178D1 /* PlaceholderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlaceholderTableViewCell.xib; path = Controllers/Cells/PlaceholderTableViewCell.xib; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				01E0F1D91CE33A41009B2147 /* SearchViewController.swift */,
-				019561431D05CB48000178D1 /* RecentViewController.swift */,
+				019561431D05CB48000178D1 /* FavoritesViewController.swift */,
 				019561451D05CB88000178D1 /* FeedViewController.swift */,
 			);
 			name = Search;
@@ -410,7 +410,7 @@
 				01AD7EE71CDCD8E400211144 /* ServiceManager.swift in Sources */,
 				01E0F1D71CE22D86009B2147 /* AppManager.swift in Sources */,
 				01E0F1DE1CE33A8A009B2147 /* BusLaneTableViewCell.swift in Sources */,
-				019561441D05CB48000178D1 /* RecentViewController.swift in Sources */,
+				019561441D05CB48000178D1 /* FavoritesViewController.swift in Sources */,
 				01AD7EF11CE088F900211144 /* BZTabBarController.swift in Sources */,
 				01AD7EE91CDCD91000211144 /* Constants.swift in Sources */,
 			);

@@ -18,7 +18,7 @@ class ServiceManager {
     func authenticateOnAPI(callback: (String, String?) -> Void){
         
         let URLString = kBaseURL + kAuthenticationURL + kApplicationToken
-        print("AUTHENTICATION URL" + URLString)
+        print("AUTHENTICATION URL " + URLString)
         makeHttpPostRequest(URLString, Params: nil) { (result, err) in
             callback(result,err)
         }
@@ -28,7 +28,7 @@ class ServiceManager {
     func searchForBus(searchTerm:String, callback: (JSON, String?) -> Void){
         
         let URLString = kBaseURL + kSearchURL + searchTermRegex(searchTerm)
-        print("SEARCH URL" + URLString)
+        print("SEARCH URL " + URLString)
         makeHttpGetRequest(URLString) { (result, err) in
             callback(result, err)
         }

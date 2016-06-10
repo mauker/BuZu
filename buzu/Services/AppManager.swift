@@ -18,8 +18,7 @@ class AppManager {
     func addRecentBusLane(busLane:JSON) -> Void {
         
         let key:String = String(busLane["CodigoLinha"].number!)
-        
-        let busDict = busLane.rawString()
+        let busDict = busLane.rawString(NSUTF8StringEncoding, options:NSJSONWritingOptions.PrettyPrinted)
         let busToAdd:NSDictionary = [key:busDict!]
         
         if defaults.objectForKey("recentLanes") == nil {
@@ -36,6 +35,7 @@ class AppManager {
         }
         
         defaults.synchronize()
+        
     }
     
     func removeRecentBusLane(busLane:JSON) -> Void {
@@ -62,23 +62,32 @@ class AppManager {
         
         let key:String = String(busLane["CodigoLinha"].number!)
         
-        let busDict = busLane.rawString()
-        let busToAdd:NSDictionary = [key:busDict!]
-        
-        if defaults.objectForKey("favLanes") == nil {
+        do {
+            let busDict = try busLane.rawData()
             
-            let lanesArray:NSArray = [busToAdd]
-            defaults.setObject(lanesArray, forKey:"favLanes")
+            let busToAdd:NSDictionary = [key:busDict]
             
-        }else {
+            if defaults.objectForKey("favLanes") == nil {
+                
+                let lanesArray:NSArray = [busToAdd]
+                defaults.setObject(lanesArray, forKey:"favLanes")
+                
+            }else {
+                
+                let lanesArray:NSMutableArray = NSMutableArray.init(array: defaults.objectForKey("favLanes") as! NSArray)
+                lanesArray.addObject(busToAdd)
+                defaults.setObject(lanesArray, forKey:"favLanes")
+                
+            }
             
-            let lanesArray:NSMutableArray = NSMutableArray.init(array: defaults.objectForKey("favLanes") as! NSArray)
-            lanesArray.addObject(busToAdd)
-            defaults.setObject(lanesArray, forKey:"favLanes")
+            defaults.synchronize()
             
+        } catch let error as NSError {
+            print("error: \(error.localizedDescription)")
         }
         
-        defaults.synchronize()
+        
+        
     }
     
     func removeFavoriteBusLane(busLane:JSON) -> Void {
@@ -125,8 +134,12 @@ class AppManager {
     
     func getFavorites() -> JSON {
         
-        let lanesArray:NSArray = NSArray.init(array: defaults.objectForKey("favLanes") as! NSArray)
+        if defaults.objectForKey("favLanes") == nil{
+            return nil
+        }
         
+        let lanesArray:NSArray = NSArray.init(array: defaults.objectForKey("favLanes") as! NSArray)
+
         let lanesToReturn:NSMutableArray = []
         
         for item in lanesArray {
@@ -134,36 +147,13 @@ class AppManager {
             let dict = item as! NSDictionary
             for key in dict.allKeys {
                 let keyStr = key as! String
-                
-                lanesToReturn.addObject(dict.objectForKey(keyStr)!)
+                let json:JSON = JSON(data: dict.objectForKey(keyStr)! as! NSData)
+                lanesToReturn.addObject(json.object)
             }
             
         }
         
-        
-        print(lanesToReturn)
-        var jsonToReturn:JSON = JSON(lanesToReturn)
-        print(jsonToReturn[0])
-        print(jsonToReturn[0]["Letreiro"])
-        
-
-        
-        do {
-            let jsonData = try NSJSONSerialization.dataWithJSONObject(lanesToReturn, options: NSJSONWritingOptions.PrettyPrinted)
-            
-            
-            let jsonString = NSString(data: jsonData, encoding: NSUTF8StringEncoding)
-            var jsonToReturn = JSON.parse(jsonString as! String)
-            
-            print(jsonToReturn[0])
-            print(jsonToReturn[0]["DenominacaoTPTS"].stringValue)
-            
-        }catch let error as NSError{
-            print(error.description)
-        }
-        
-
-        return []
+        return JSON(lanesToReturn)
     }
 
     //MARK: ALERT
