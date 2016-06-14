@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import SwiftLoader
 
 class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, BusLaneTableViewCellDelegate {
     
@@ -19,14 +20,14 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchBar.placeholder = "Procurar"
+        searchBar.placeholder = "Ex.: Paulista ou 917M"
         searchBar.delegate = self
         searchBar.tintColor = UIColor.init(colorLiteralRed: 82/255.0, green: 50/255.0, blue: 84/255.0, alpha: 1.0)
         navigationItem.titleView = searchBar
         
         self.tableView.registerNib(UINib.init(nibName:"BusLaneTableViewCell", bundle: nil), forCellReuseIdentifier: "BusLaneCell")
         self.tableView.registerNib(UINib.init(nibName:"PlaceholderTableViewCell", bundle: nil), forCellReuseIdentifier: "PlaceholderCell")
-        self.tableView.estimatedRowHeight = 80;
+        self.tableView.estimatedRowHeight = 80
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
@@ -48,6 +49,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     func searchForBusLane(searchTerm:String) {
         
+        SwiftLoader.show(animated: true)
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         ServiceManager.sharedInstance.authenticateOnAPI { (result, err) in
@@ -57,6 +59,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
                 dispatch_async(dispatch_get_main_queue()) {
                     AppManager.sharedInstance.showAlertView("Erro", message: err!)
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                    SwiftLoader.hide()
                 }
                 
             }else{
@@ -71,6 +74,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
                                 
                                 AppManager.sharedInstance.showAlertView("Erro", message: err!)
                                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                                SwiftLoader.hide()
                                 
                             }
                             
@@ -84,6 +88,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
                                 dispatch_async(dispatch_get_main_queue()) {
                                     self.tableView.reloadData()
                                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                                    SwiftLoader.hide()
                                 }
                                 
                             }else {
@@ -91,6 +96,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
                                 dispatch_async(dispatch_get_main_queue()) {
                                     AppManager.sharedInstance.showAlertView("BuZu", message: "Não foi possível encontrar nenhuma linha para sua pesquisa")
                                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                                    SwiftLoader.hide()
 
                                 }
                                 
@@ -107,6 +113,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
                         
                         AppManager.sharedInstance.showAlertView("Erro", message:"SPTrans está offline no momento, tente novamente mais tarde.")
                         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                        SwiftLoader.hide()
                         
                     }
                     
@@ -154,6 +161,18 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! BusLaneTableViewCell
+
+        let storyboard = UIStoryboard(name:"Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("MapViewController") as! MapViewController
+        vc.selectedBusLane = cell.busLane
+        self.presentViewController(vc, animated: true, completion: nil)
+        
+        
     }
     
     //MARK: CellDelegate

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		016F479A1D0EE4EB002798B2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016F47991D0EE4EB002798B2 /* MapViewController.swift */; };
 		019561441D05CB48000178D1 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019561431D05CB48000178D1 /* FavoritesViewController.swift */; };
 		019561461D05CB88000178D1 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019561451D05CB88000178D1 /* FeedViewController.swift */; };
 		019561571D072571000178D1 /* PlaceholderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019561561D072571000178D1 /* PlaceholderTableViewCell.swift */; };
@@ -20,6 +21,7 @@
 		01AD7EE71CDCD8E400211144 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD7EE61CDCD8E400211144 /* ServiceManager.swift */; };
 		01AD7EE91CDCD91000211144 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD7EE81CDCD91000211144 /* Constants.swift */; };
 		01AD7EF11CE088F900211144 /* BZTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD7EF01CE088F900211144 /* BZTabBarController.swift */; };
+		01C648141D0EF401008BF607 /* BusAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C648131D0EF401008BF607 /* BusAnnotation.swift */; };
 		01E0F1D71CE22D86009B2147 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0F1D61CE22D86009B2147 /* AppManager.swift */; };
 		01E0F1DA1CE33A41009B2147 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0F1D91CE33A41009B2147 /* SearchViewController.swift */; };
 		01E0F1DC1CE33A7D009B2147 /* BusLaneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01E0F1DB1CE33A7D009B2147 /* BusLaneTableViewCell.xib */; };
@@ -45,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		016F47991D0EE4EB002798B2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Controllers/MapViewController.swift; sourceTree = "<group>"; };
 		019561431D05CB48000178D1 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesViewController.swift; path = Controllers/FavoritesViewController.swift; sourceTree = "<group>"; };
 		019561451D05CB88000178D1 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedViewController.swift; path = Controllers/FeedViewController.swift; sourceTree = "<group>"; };
 		019561561D072571000178D1 /* PlaceholderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderTableViewCell.swift; path = Controllers/Cells/PlaceholderTableViewCell.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 		01AD7EE61CDCD8E400211144 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceManager.swift; path = Services/ServiceManager.swift; sourceTree = "<group>"; };
 		01AD7EE81CDCD91000211144 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Services/Constants.swift; sourceTree = "<group>"; };
 		01AD7EF01CE088F900211144 /* BZTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BZTabBarController.swift; sourceTree = "<group>"; };
+		01C648131D0EF401008BF607 /* BusAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusAnnotation.swift; path = Controllers/Annotation/BusAnnotation.swift; sourceTree = "<group>"; };
 		01E0F1D61CE22D86009B2147 /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppManager.swift; path = Services/AppManager.swift; sourceTree = "<group>"; };
 		01E0F1D91CE33A41009B2147 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Controllers/SearchViewController.swift; sourceTree = "<group>"; };
 		01E0F1DB1CE33A7D009B2147 /* BusLaneTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BusLaneTableViewCell.xib; path = Controllers/Cells/BusLaneTableViewCell.xib; sourceTree = "<group>"; };
@@ -175,20 +179,30 @@
 		01AD7EEC1CDCDF5300211144 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				01C648121D0EF3D5008BF607 /* Annotation */,
 				01E0F1D81CE33981009B2147 /* Cells */,
-				01AD7EED1CDCDF5B00211144 /* Search */,
+				01AD7EED1CDCDF5B00211144 /* Views */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		01AD7EED1CDCDF5B00211144 /* Search */ = {
+		01AD7EED1CDCDF5B00211144 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				01E0F1D91CE33A41009B2147 /* SearchViewController.swift */,
 				019561431D05CB48000178D1 /* FavoritesViewController.swift */,
 				019561451D05CB88000178D1 /* FeedViewController.swift */,
+				016F47991D0EE4EB002798B2 /* MapViewController.swift */,
 			);
-			name = Search;
+			name = Views;
+			sourceTree = "<group>";
+		};
+		01C648121D0EF3D5008BF607 /* Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				01C648131D0EF401008BF607 /* BusAnnotation.swift */,
+			);
+			name = Annotation;
 			sourceTree = "<group>";
 		};
 		01E0F1D81CE33981009B2147 /* Cells */ = {
@@ -403,8 +417,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				016F479A1D0EE4EB002798B2 /* MapViewController.swift in Sources */,
 				01E0F1DA1CE33A41009B2147 /* SearchViewController.swift in Sources */,
 				019561571D072571000178D1 /* PlaceholderTableViewCell.swift in Sources */,
+				01C648141D0EF401008BF607 /* BusAnnotation.swift in Sources */,
 				019561461D05CB88000178D1 /* FeedViewController.swift in Sources */,
 				01AD7EB81CDCD57300211144 /* AppDelegate.swift in Sources */,
 				01AD7EE71CDCD8E400211144 /* ServiceManager.swift in Sources */,

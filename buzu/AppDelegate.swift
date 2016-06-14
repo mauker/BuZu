@@ -7,18 +7,30 @@
 //
 
 import UIKit
+import CoreLocation
+import SwiftLoader
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var locationManager: CLLocationManager?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.lightGrayColor()], forState:.Normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState:.Selected)
+        
+        locationManager = CLLocationManager()
+        locationManager?.requestWhenInUseAuthorization()
+        
+        var config : SwiftLoader.Config = SwiftLoader.Config()
+        config.size = 150
+        config.spinnerColor = UIColor.init(colorLiteralRed: 82/255.0, green: 50/255.0, blue: 84/255.0, alpha: 1.0)
+        config.foregroundColor = .blackColor()
+        config.foregroundAlpha = 0.0
+        SwiftLoader.setConfig(config)
         
 //        ServiceManager.sharedInstance.authenticateOnAPI { (result, err) in
 //            if (err != nil) {

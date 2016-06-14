@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Notícias-->
@@ -99,6 +100,102 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6K-E9-2XX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2024" y="1042"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Bhd-gd-6yP">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="qR5-TL-GNk" customClass="MapViewController" customModule="buzu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="luA-y7-rbZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bmt-KC-klN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5dj-yf-IRC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="avn-ul-Z7O">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="qR5-TL-GNk" id="TNu-yR-yGX"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p88-4v-GgB">
+                                <rect key="frame" x="20" y="25" width="40" height="40"/>
+                                <state key="normal" image="icon_close">
+                                    <color key="titleColor" red="0.32156862749999998" green="0.1960784314" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTouchBackButton:" destination="qR5-TL-GNk" eventType="touchUpInside" id="chB-ZH-EFv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2EQ-Lx-P41">
+                                <rect key="frame" x="68" y="25" width="40" height="40"/>
+                                <state key="normal" image="icon_location">
+                                    <color key="titleColor" red="0.32156862749999998" green="0.1960784314" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTouchLocationButton:" destination="qR5-TL-GNk" eventType="touchUpInside" id="JIo-QQ-Rdf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Smf-kJ-hGW">
+                                <rect key="frame" x="116" y="25" width="40" height="40"/>
+                                <state key="normal" image="icon_update">
+                                    <color key="titleColor" red="0.32156862749999998" green="0.1960784314" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTouchUpdateButton:" destination="qR5-TL-GNk" eventType="touchUpInside" id="g9r-OC-ifJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AaY-Ba-bMd">
+                                <rect key="frame" x="164" y="25" width="40" height="40"/>
+                                <state key="normal" image="icon_accessibility">
+                                    <color key="titleColor" red="0.32156862749999998" green="0.1960784314" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTouchAccessibilityButton:" destination="qR5-TL-GNk" eventType="touchUpInside" id="AJo-Px-itN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   919H-10   " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZH-Fd-buZ">
+                                <rect key="frame" x="212" y="25" width="95" height="40"/>
+                                <color key="backgroundColor" red="0.32156862749999998" green="0.1960784314" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1D5-JG-WJ4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AaY-Ba-bMd" firstAttribute="leading" secondItem="Smf-kJ-hGW" secondAttribute="trailing" constant="8" id="9dx-sg-vnD"/>
+                            <constraint firstItem="avn-ul-Z7O" firstAttribute="leading" secondItem="5dj-yf-IRC" secondAttribute="leading" id="A9D-z4-Aqm"/>
+                            <constraint firstItem="2EQ-Lx-P41" firstAttribute="leading" secondItem="p88-4v-GgB" secondAttribute="trailing" constant="8" id="BoD-Qz-VCr"/>
+                            <constraint firstItem="avn-ul-Z7O" firstAttribute="top" secondItem="5dj-yf-IRC" secondAttribute="top" id="DBP-OS-H5H"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="p88-4v-GgB" secondAttribute="leading" id="GBg-IW-m2E"/>
+                            <constraint firstItem="Smf-kJ-hGW" firstAttribute="leading" secondItem="2EQ-Lx-P41" secondAttribute="trailing" constant="8" id="IIK-s1-7cF"/>
+                            <constraint firstItem="AaY-Ba-bMd" firstAttribute="top" secondItem="luA-y7-rbZ" secondAttribute="bottom" constant="5" id="NEU-nq-Lhc"/>
+                            <constraint firstItem="Smf-kJ-hGW" firstAttribute="top" secondItem="luA-y7-rbZ" secondAttribute="bottom" constant="5" id="PSB-HW-LuF"/>
+                            <constraint firstItem="p88-4v-GgB" firstAttribute="top" secondItem="luA-y7-rbZ" secondAttribute="bottom" constant="5" id="SK6-cQ-5oc"/>
+                            <constraint firstAttribute="trailing" secondItem="avn-ul-Z7O" secondAttribute="trailing" id="SyM-il-PUb"/>
+                            <constraint firstItem="2EQ-Lx-P41" firstAttribute="top" secondItem="luA-y7-rbZ" secondAttribute="bottom" constant="5" id="bQ9-Kh-0B0"/>
+                            <constraint firstItem="rZH-Fd-buZ" firstAttribute="top" secondItem="luA-y7-rbZ" secondAttribute="bottom" constant="5" id="ex5-Tw-KmO"/>
+                            <constraint firstItem="rZH-Fd-buZ" firstAttribute="leading" secondItem="AaY-Ba-bMd" secondAttribute="trailing" constant="8" id="fwI-n6-74q"/>
+                            <constraint firstItem="avn-ul-Z7O" firstAttribute="bottom" secondItem="Bmt-KC-klN" secondAttribute="top" id="ttX-CB-okS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="accessibilityButton" destination="AaY-Ba-bMd" id="tVA-QJ-96L"/>
+                        <outlet property="backButton" destination="p88-4v-GgB" id="osS-zF-88U"/>
+                        <outlet property="laneNumberLabel" destination="rZH-Fd-buZ" id="zO5-qz-GSe"/>
+                        <outlet property="locationButton" destination="2EQ-Lx-P41" id="erO-q3-aEW"/>
+                        <outlet property="mapView" destination="avn-ul-Z7O" id="pZq-ZJ-cSm"/>
+                        <outlet property="updateButton" destination="Smf-kJ-hGW" id="8Ld-Qt-vjz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LBb-Wi-nZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2759" y="576"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="NzB-IZ-5M7">
@@ -198,6 +295,10 @@
     </scenes>
     <resources>
         <image name="feed" width="25" height="25"/>
+        <image name="icon_accessibility" width="40" height="40"/>
+        <image name="icon_close" width="40" height="40"/>
+        <image name="icon_location" width="40" height="40"/>
+        <image name="icon_update" width="40" height="40"/>
         <image name="search" width="25" height="25"/>
         <image name="star" width="25" height="25"/>
     </resources>

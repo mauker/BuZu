@@ -82,6 +82,18 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         return UITableViewAutomaticDimension
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! BusLaneTableViewCell
+        
+        let storyboard = UIStoryboard(name:"Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("MapViewController") as! MapViewController
+        vc.selectedBusLane = cell.busLane
+        self.presentViewController(vc, animated: true, completion: nil)
+        
+        
+    }
+    
     func didTouchFavoriteForCell(cell: BusLaneTableViewCell) {
         
         if cell.isFavorite {
@@ -95,7 +107,6 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
             self.tableView.deleteRowsAtIndexPaths([index], withRowAnimation: UITableViewRowAnimation.Left)
             
             self.tableView.endUpdates()
-
             self.fetchData()
             
         }
