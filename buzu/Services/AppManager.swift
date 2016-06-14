@@ -13,50 +13,24 @@ class AppManager {
     
     static let sharedInstance = AppManager()
     let defaults = NSUserDefaults.standardUserDefaults()
-    
-    //MARK: RECENTS
-    func addRecentBusLane(busLane:JSON) -> Void {
+
+    //MARK: MIGRATION
+    func migrateFavorites() -> Void {
         
-        let key:String = String(busLane["CodigoLinha"].number!)
-        let busDict = busLane.rawString(NSUTF8StringEncoding, options:NSJSONWritingOptions.PrettyPrinted)
-        let busToAdd:NSDictionary = [key:busDict!]
-        
-        if defaults.objectForKey("recentLanes") == nil {
+        if defaults.objectForKey("favorites") != nil {
             
-            let lanesArray:NSArray = [busToAdd]
-            defaults.setObject(lanesArray, forKey:"recentLanes")
-            
-        }else {
-            
-            let lanesArray:NSMutableArray = NSMutableArray.init(array: defaults.objectForKey("recentLanes") as! NSArray)
-            lanesArray.addObject(busToAdd)
-            defaults.setObject(lanesArray, forKey:"recentLanes")
-            
-        }
-        
-        defaults.synchronize()
-        
-    }
-    
-    func removeRecentBusLane(busLane:JSON) -> Void {
-        
-        let lanesArray:NSMutableArray = NSMutableArray.init(array: defaults.objectForKey("recentLanes") as! NSArray)
-        
-        let key:String = String(busLane["CodigoLinha"].number!)
-        
-        for item in lanesArray {
-            
-            if (item.objectForKey(key) != nil) {
-                lanesArray.removeObject(item)
+            let oldFavorites:NSArray = defaults.objectForKey("favorites") as! NSArray
+            for item in oldFavorites {
+                
+                let jsonConvert:JSON = JSON(item)
+                self.addFavoriteBusLane(jsonConvert)
+                
             }
             
         }
         
-        defaults.setObject(lanesArray, forKey:"recentLanes")
-        defaults.synchronize()
-         
     }
-
+    
     //MARK: FAVORITES
     func addFavoriteBusLane(busLane:JSON) -> Void {
         

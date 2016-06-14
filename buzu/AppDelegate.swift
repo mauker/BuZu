@@ -17,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var locationManager: CLLocationManager?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if defaults.objectForKey("migrationComplete") == nil {
+            AppManager.sharedInstance.migrateFavorites()
+            defaults.setObject(true, forKey: "migrationComplete")
+        }
 
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.lightGrayColor()], forState:.Normal)
@@ -31,34 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         config.foregroundColor = .blackColor()
         config.foregroundAlpha = 0.0
         SwiftLoader.setConfig(config)
-        
-//        ServiceManager.sharedInstance.authenticateOnAPI { (result, err) in
-//            if (err != nil) {
-//                print(err)
-//            }else {
-//                if result == "true" {
-//                    ServiceManager.sharedInstance.searchForBus("Itaim Bibi", callback: { (result, err) in
-//                    
-//                        if (err != nil) {
-//                            print(err)
-//                        }else {
-//                            
-//                            let laneCode = result[0]["CodigoLinha"].int
-//                            ServiceManager.sharedInstance.uptadePosition(laneCode!, callback: { (result, err) in
-//                                if err != nil {
-//                                    print(err)
-//                                }else {
-//                                    print(result)
-//                                }
-//                                
-//                            })
-//                            
-//                        }
-//                    })
-//  
-//                }
-//            }
-//        }
         
         return true
     }
