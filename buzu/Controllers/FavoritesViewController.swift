@@ -64,7 +64,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         if shouldShowPlaceholder == true {
             let cell :PlaceholderTableViewCell = tableView.dequeueReusableCellWithIdentifier("PlaceholderCell") as! PlaceholderTableViewCell
             cell.userInteractionEnabled = false
-            cell.placeholderTitle.text = "Você não possui linhas favoritas. Para adicionar uma linha como favorita, basta tocar na estrela"
+            cell.placeholderTitle.text = "Você ainda não possui linhas favoritas."
             return cell
         }
         
