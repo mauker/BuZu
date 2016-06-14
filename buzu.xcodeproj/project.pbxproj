@@ -14,7 +14,6 @@
 		019561591D072585000178D1 /* PlaceholderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 019561581D072585000178D1 /* PlaceholderTableViewCell.xib */; };
 		01AD7EB81CDCD57300211144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD7EB71CDCD57300211144 /* AppDelegate.swift */; };
 		01AD7EBD1CDCD57300211144 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01AD7EBB1CDCD57300211144 /* Main.storyboard */; };
-		01AD7EBF1CDCD57300211144 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01AD7EBE1CDCD57300211144 /* Assets.xcassets */; };
 		01AD7EC21CDCD57300211144 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01AD7EC01CDCD57300211144 /* LaunchScreen.storyboard */; };
 		01AD7ECD1CDCD57300211144 /* buzuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD7ECC1CDCD57300211144 /* buzuTests.swift */; };
 		01AD7ED81CDCD57300211144 /* buzuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD7ED71CDCD57300211144 /* buzuUITests.swift */; };
@@ -26,6 +25,7 @@
 		01E0F1DA1CE33A41009B2147 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0F1D91CE33A41009B2147 /* SearchViewController.swift */; };
 		01E0F1DC1CE33A7D009B2147 /* BusLaneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01E0F1DB1CE33A7D009B2147 /* BusLaneTableViewCell.xib */; };
 		01E0F1DE1CE33A8A009B2147 /* BusLaneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0F1DD1CE33A8A009B2147 /* BusLaneTableViewCell.swift */; };
+		01E720AA1D104F7F00160F66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E720A91D104F7F00160F66 /* Assets.xcassets */; };
 		934CB61231656E21393E951F /* Pods_buzu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74428ED52B1BDF69F5678ACB /* Pods_buzu.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,6 @@
 		01AD7EB41CDCD57300211144 /* buzu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buzu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01AD7EB71CDCD57300211144 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01AD7EBC1CDCD57300211144 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		01AD7EBE1CDCD57300211144 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01AD7EC11CDCD57300211144 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01AD7EC31CDCD57300211144 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01AD7EC81CDCD57300211144 /* buzuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = buzuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +71,7 @@
 		01E0F1D91CE33A41009B2147 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Controllers/SearchViewController.swift; sourceTree = "<group>"; };
 		01E0F1DB1CE33A7D009B2147 /* BusLaneTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BusLaneTableViewCell.xib; path = Controllers/Cells/BusLaneTableViewCell.xib; sourceTree = "<group>"; };
 		01E0F1DD1CE33A8A009B2147 /* BusLaneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusLaneTableViewCell.swift; path = Controllers/Cells/BusLaneTableViewCell.swift; sourceTree = "<group>"; };
+		01E720A91D104F7F00160F66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74428ED52B1BDF69F5678ACB /* Pods_buzu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buzu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B5EC33B1AFAE2E61862B714 /* Pods-buzu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-buzu/Pods-buzu.debug.xcconfig"; sourceTree = "<group>"; };
 		E63D9FEBF0DB337C22C4D225 /* Pods-buzu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzu.release.xcconfig"; path = "Pods/Target Support Files/Pods-buzu/Pods-buzu.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,11 +137,11 @@
 		01AD7EB61CDCD57300211144 /* buzu */ = {
 			isa = PBXGroup;
 			children = (
+				01E720A91D104F7F00160F66 /* Assets.xcassets */,
 				019561471D06C898000178D1 /* App */,
 				01AD7EE51CDCD8CB00211144 /* Service */,
 				01AD7EEC1CDCDF5300211144 /* Controllers */,
 				01AD7EBB1CDCD57300211144 /* Main.storyboard */,
-				01AD7EBE1CDCD57300211144 /* Assets.xcassets */,
 				01AD7EC01CDCD57300211144 /* LaunchScreen.storyboard */,
 				01AD7EC31CDCD57300211144 /* Info.plist */,
 			);
@@ -341,10 +341,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				01AD7EC21CDCD57300211144 /* LaunchScreen.storyboard in Resources */,
-				01AD7EBF1CDCD57300211144 /* Assets.xcassets in Resources */,
 				01E0F1DC1CE33A7D009B2147 /* BusLaneTableViewCell.xib in Resources */,
 				01AD7EBD1CDCD57300211144 /* Main.storyboard in Resources */,
 				019561591D072585000178D1 /* PlaceholderTableViewCell.xib in Resources */,
+				01E720AA1D104F7F00160F66 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
