@@ -8,8 +8,8 @@
 
 // MARK: - Keys
 let kApplicationToken = "da96bf36a683d98dd757c0f885a8f380c04f044edf1d820ce64ff54e0ce301aa"
-let kConsumerKey = "yaLbQBZNSZ7Y6N371SJmxPjYq"
-let kConsumerSecret = "OQXq250a9SAOetXuQg4w1vTzVCXAuNX1cxSVh5AvnQlWRwLO9w"
+let kTwitterConsumerKey = "yaLbQBZNSZ7Y6N371SJmxPjYq"
+let kTwitterConsumerSecret = "OQXq250a9SAOetXuQg4w1vTzVCXAuNX1cxSVh5AvnQlWRwLO9w"
 
 // MARK: - URLS
 

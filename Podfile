@@ -6,6 +6,7 @@ use_frameworks!
 target 'buzu' do
 pod 'SwiftyJSON'
 pod 'SwiftLoader'
+pod 'TwitterKit'
 end
 
 target 'buzuTests' do
