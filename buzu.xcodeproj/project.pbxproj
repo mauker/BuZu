@@ -26,6 +26,8 @@
 		01E0F1DC1CE33A7D009B2147 /* BusLaneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01E0F1DB1CE33A7D009B2147 /* BusLaneTableViewCell.xib */; };
 		01E0F1DE1CE33A8A009B2147 /* BusLaneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0F1DD1CE33A8A009B2147 /* BusLaneTableViewCell.swift */; };
 		01E720AA1D104F7F00160F66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E720A91D104F7F00160F66 /* Assets.xcassets */; };
+		01E720B01D1063A000160F66 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E720AF1D1063A000160F66 /* FeedTableViewCell.swift */; };
+		01E720B21D1063B300160F66 /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01E720B11D1063B300160F66 /* FeedTableViewCell.xib */; };
 		934CB61231656E21393E951F /* Pods_buzu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74428ED52B1BDF69F5678ACB /* Pods_buzu.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +74,8 @@
 		01E0F1DB1CE33A7D009B2147 /* BusLaneTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BusLaneTableViewCell.xib; path = Controllers/Cells/BusLaneTableViewCell.xib; sourceTree = "<group>"; };
 		01E0F1DD1CE33A8A009B2147 /* BusLaneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusLaneTableViewCell.swift; path = Controllers/Cells/BusLaneTableViewCell.swift; sourceTree = "<group>"; };
 		01E720A91D104F7F00160F66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		01E720AF1D1063A000160F66 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedTableViewCell.swift; path = Controllers/Cells/FeedTableViewCell.swift; sourceTree = "<group>"; };
+		01E720B11D1063B300160F66 /* FeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeedTableViewCell.xib; path = Controllers/Cells/FeedTableViewCell.xib; sourceTree = "<group>"; };
 		74428ED52B1BDF69F5678ACB /* Pods_buzu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buzu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B5EC33B1AFAE2E61862B714 /* Pods-buzu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-buzu/Pods-buzu.debug.xcconfig"; sourceTree = "<group>"; };
 		E63D9FEBF0DB337C22C4D225 /* Pods-buzu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzu.release.xcconfig"; path = "Pods/Target Support Files/Pods-buzu/Pods-buzu.release.xcconfig"; sourceTree = "<group>"; };
@@ -189,8 +193,8 @@
 		01AD7EED1CDCDF5B00211144 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				01E0F1D91CE33A41009B2147 /* SearchViewController.swift */,
 				019561431D05CB48000178D1 /* FavoritesViewController.swift */,
+				01E0F1D91CE33A41009B2147 /* SearchViewController.swift */,
 				019561451D05CB88000178D1 /* FeedViewController.swift */,
 				016F47991D0EE4EB002798B2 /* MapViewController.swift */,
 			);
@@ -208,12 +212,38 @@
 		01E0F1D81CE33981009B2147 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				01E720AD1D10637D00160F66 /* Placeholder */,
+				01E720AE1D10638400160F66 /* BusLane */,
+				01E720B31D1063B800160F66 /* Feed */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		01E720AD1D10637D00160F66 /* Placeholder */ = {
+			isa = PBXGroup;
+			children = (
 				019561561D072571000178D1 /* PlaceholderTableViewCell.swift */,
 				019561581D072585000178D1 /* PlaceholderTableViewCell.xib */,
+			);
+			name = Placeholder;
+			sourceTree = "<group>";
+		};
+		01E720AE1D10638400160F66 /* BusLane */ = {
+			isa = PBXGroup;
+			children = (
 				01E0F1DD1CE33A8A009B2147 /* BusLaneTableViewCell.swift */,
 				01E0F1DB1CE33A7D009B2147 /* BusLaneTableViewCell.xib */,
 			);
-			name = Cells;
+			name = BusLane;
+			sourceTree = "<group>";
+		};
+		01E720B31D1063B800160F66 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				01E720AF1D1063A000160F66 /* FeedTableViewCell.swift */,
+				01E720B11D1063B300160F66 /* FeedTableViewCell.xib */,
+			);
+			name = Feed;
 			sourceTree = "<group>";
 		};
 		1DD6EBF43AFB029BEAF7A650 /* Pods */ = {
@@ -343,6 +373,7 @@
 				01AD7EC21CDCD57300211144 /* LaunchScreen.storyboard in Resources */,
 				01E0F1DC1CE33A7D009B2147 /* BusLaneTableViewCell.xib in Resources */,
 				01AD7EBD1CDCD57300211144 /* Main.storyboard in Resources */,
+				01E720B21D1063B300160F66 /* FeedTableViewCell.xib in Resources */,
 				019561591D072585000178D1 /* PlaceholderTableViewCell.xib in Resources */,
 				01E720AA1D104F7F00160F66 /* Assets.xcassets in Resources */,
 			);
@@ -422,6 +453,7 @@
 				019561571D072571000178D1 /* PlaceholderTableViewCell.swift in Sources */,
 				01C648141D0EF401008BF607 /* BusAnnotation.swift in Sources */,
 				019561461D05CB88000178D1 /* FeedViewController.swift in Sources */,
+				01E720B01D1063A000160F66 /* FeedTableViewCell.swift in Sources */,
 				01AD7EB81CDCD57300211144 /* AppDelegate.swift in Sources */,
 				01AD7EE71CDCD8E400211144 /* ServiceManager.swift in Sources */,
 				01E0F1D71CE22D86009B2147 /* AppManager.swift in Sources */,
