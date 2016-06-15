@@ -9,6 +9,8 @@
 import UIKit
 import CoreLocation
 import SwiftLoader
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             defaults.setObject(true, forKey: "migrationComplete")
         }
 
+        Fabric.with([Crashlytics.self])
+        
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.lightGrayColor()], forState:.Normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState:.Selected)
