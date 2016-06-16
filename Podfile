@@ -13,7 +13,8 @@ pod 'TwitterKit'
 end
 
 target 'buzuTests' do
-
+pod 'SwiftyJSON'
+pod 'Fabric'
 end
 
 target 'buzuUITests' do
