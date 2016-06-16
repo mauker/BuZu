@@ -6,40 +6,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Notícias-->
-        <scene sceneID="DRh-Uf-dtP">
-            <objects>
-                <viewController id="Voi-ag-GD7" customClass="FeedViewController" customModule="buzu" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dFP-SA-MLk"/>
-                        <viewControllerLayoutGuide type="bottom" id="u5g-lC-Ugq"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lqL-WW-aOC">
-                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iX8-gb-lEx">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="iX8-gb-lEx" secondAttribute="trailing" id="8wf-1U-0HH"/>
-                            <constraint firstItem="iX8-gb-lEx" firstAttribute="top" secondItem="dFP-SA-MLk" secondAttribute="bottom" id="BPV-6q-Ioh"/>
-                            <constraint firstItem="iX8-gb-lEx" firstAttribute="leading" secondItem="lqL-WW-aOC" secondAttribute="leading" id="VNn-FW-a3H"/>
-                            <constraint firstItem="iX8-gb-lEx" firstAttribute="bottom" secondItem="u5g-lC-Ugq" secondAttribute="top" id="bcM-yi-36L"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Notícias" id="6zO-7k-H26"/>
-                    <connections>
-                        <outlet property="tableView" destination="iX8-gb-lEx" id="A0q-eU-hfx"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="04k-BI-GDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2024" y="1759"/>
-        </scene>
         <!--Favoritos-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -115,6 +81,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X6K-E9-2XX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2024" y="1042"/>
+        </scene>
+        <!--Notícias-->
+        <scene sceneID="fpb-dk-Yjr">
+            <objects>
+                <tableViewController id="9ht-ON-KH9" customClass="FeedViewController" customModule="buzu" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fiJ-cK-k6E">
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" id="Z46-hB-5nZ">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z46-hB-5nZ" id="seC-cw-wZN">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9ht-ON-KH9" id="OZn-2X-6vL"/>
+                            <outlet property="delegate" destination="9ht-ON-KH9" id="QlK-1r-jsQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Notícias" id="p59-r5-DZx"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mg2-Hn-NPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1880" y="1759"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="Bhd-gd-6yP">
@@ -300,7 +295,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Voi-ag-GD7" kind="relationship" relationship="rootViewController" id="VdA-m9-Qq8"/>
+                        <segue destination="9ht-ON-KH9" kind="relationship" relationship="rootViewController" id="u4g-Fz-67v"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8vP-hh-Lot" userLabel="First Responder" sceneMemberID="firstResponder"/>

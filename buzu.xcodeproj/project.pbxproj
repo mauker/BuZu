@@ -54,6 +54,7 @@
 		019561451D05CB88000178D1 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedViewController.swift; path = Controllers/FeedViewController.swift; sourceTree = "<group>"; };
 		019561561D072571000178D1 /* PlaceholderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderTableViewCell.swift; path = Controllers/Cells/PlaceholderTableViewCell.swift; sourceTree = "<group>"; };
 		019561581D072585000178D1 /* PlaceholderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlaceholderTableViewCell.xib; path = Controllers/Cells/PlaceholderTableViewCell.xib; sourceTree = "<group>"; };
+		01ACE7E31D129E7900F3A65A /* buzu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "buzu-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		01AD7EB41CDCD57300211144 /* buzu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buzu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01AD7EB71CDCD57300211144 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01AD7EBC1CDCD57300211144 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 		019561471D06C898000178D1 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				01ACE7E31D129E7900F3A65A /* buzu-Bridging-Header.h */,
 				01AD7EB71CDCD57300211144 /* AppDelegate.swift */,
 				01AD7EF01CE088F900211144 /* BZTabBarController.swift */,
 			);
@@ -335,6 +337,7 @@
 				TargetAttributes = {
 					01AD7EB31CDCD57300211144 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = YR5U8QDANM;
 					};
 					01AD7EC71CDCD57300211144 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -533,6 +536,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -578,6 +582,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -617,11 +622,14 @@
 			baseConfigurationReference = 8B5EC33B1AFAE2E61862B714 /* Pods-buzu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = buzu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rihurla.buzu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "buzu-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -630,11 +638,14 @@
 			baseConfigurationReference = E63D9FEBF0DB337C22C4D225 /* Pods-buzu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = buzu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rihurla.buzu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "buzu-Bridging-Header.h";
 			};
 			name = Release;
 		};

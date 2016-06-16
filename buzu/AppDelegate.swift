@@ -11,6 +11,7 @@ import CoreLocation
 import SwiftLoader
 import Fabric
 import Crashlytics
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,7 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             defaults.setObject(true, forKey: "migrationComplete")
         }
 
-        Fabric.with([Crashlytics.self])
+        Fabric.with([Crashlytics.self, Twitter.self])
+        Twitter.sharedInstance().startWithConsumerKey(kTwitterConsumerKey, consumerSecret: kTwitterConsumerSecret)
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.lightGrayColor()], forState:.Normal)

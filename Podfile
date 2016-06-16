@@ -8,6 +8,8 @@ pod 'SwiftyJSON'
 pod 'SwiftLoader'
 pod 'Fabric'
 pod 'Crashlytics'
+pod 'TwitterCore'
+pod 'TwitterKit'
 end
 
 target 'buzuTests' do
