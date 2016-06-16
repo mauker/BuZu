@@ -7,15 +7,44 @@
 //
 
 import UIKit
+import CoreLocation
+import SwiftLoader
+import Fabric
+import Crashlytics
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var locationManager: CLLocationManager?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if defaults.objectForKey("migrationComplete") == nil {
+            AppManager.sharedInstance.migrateFavorites()
+            defaults.setObject(true, forKey: "migrationComplete")
+        }
+
+        Fabric.with([Crashlytics.self, Twitter.self])
+        Twitter.sharedInstance().startWithConsumerKey(kTwitterConsumerKey, consumerSecret: kTwitterConsumerSecret)
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.lightGrayColor()], forState:.Normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState:.Selected)
+        
+        locationManager = CLLocationManager()
+        locationManager?.requestWhenInUseAuthorization()
+        
+        var config : SwiftLoader.Config = SwiftLoader.Config()
+        config.size = 150
+        config.spinnerColor = UIColor.init(colorLiteralRed: 82/255.0, green: 50/255.0, blue: 84/255.0, alpha: 1.0)
+        config.foregroundColor = .blackColor()
+        config.foregroundAlpha = 0.0
+        SwiftLoader.setConfig(config)
+        
         return true
     }
 
@@ -40,7 +69,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
 }
 

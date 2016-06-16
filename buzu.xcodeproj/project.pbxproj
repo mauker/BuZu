@@ -7,13 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		016F479A1D0EE4EB002798B2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016F47991D0EE4EB002798B2 /* MapViewController.swift */; };
+		019561441D05CB48000178D1 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019561431D05CB48000178D1 /* FavoritesViewController.swift */; };
+		019561461D05CB88000178D1 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019561451D05CB88000178D1 /* FeedViewController.swift */; };
+		019561571D072571000178D1 /* PlaceholderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019561561D072571000178D1 /* PlaceholderTableViewCell.swift */; };
+		019561591D072585000178D1 /* PlaceholderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 019561581D072585000178D1 /* PlaceholderTableViewCell.xib */; };
 		01AD7EB81CDCD57300211144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD7EB71CDCD57300211144 /* AppDelegate.swift */; };
-		01AD7EBA1CDCD57300211144 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD7EB91CDCD57300211144 /* ViewController.swift */; };
 		01AD7EBD1CDCD57300211144 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01AD7EBB1CDCD57300211144 /* Main.storyboard */; };
-		01AD7EBF1CDCD57300211144 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01AD7EBE1CDCD57300211144 /* Assets.xcassets */; };
 		01AD7EC21CDCD57300211144 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01AD7EC01CDCD57300211144 /* LaunchScreen.storyboard */; };
 		01AD7ECD1CDCD57300211144 /* buzuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD7ECC1CDCD57300211144 /* buzuTests.swift */; };
 		01AD7ED81CDCD57300211144 /* buzuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD7ED71CDCD57300211144 /* buzuUITests.swift */; };
+		01AD7EE71CDCD8E400211144 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD7EE61CDCD8E400211144 /* ServiceManager.swift */; };
+		01AD7EE91CDCD91000211144 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD7EE81CDCD91000211144 /* Constants.swift */; };
+		01AD7EF11CE088F900211144 /* BZTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD7EF01CE088F900211144 /* BZTabBarController.swift */; };
+		01C648141D0EF401008BF607 /* BusAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C648131D0EF401008BF607 /* BusAnnotation.swift */; };
+		01E0F1D71CE22D86009B2147 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0F1D61CE22D86009B2147 /* AppManager.swift */; };
+		01E0F1DA1CE33A41009B2147 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0F1D91CE33A41009B2147 /* SearchViewController.swift */; };
+		01E0F1DC1CE33A7D009B2147 /* BusLaneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01E0F1DB1CE33A7D009B2147 /* BusLaneTableViewCell.xib */; };
+		01E0F1DE1CE33A8A009B2147 /* BusLaneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E0F1DD1CE33A8A009B2147 /* BusLaneTableViewCell.swift */; };
+		01E720AA1D104F7F00160F66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E720A91D104F7F00160F66 /* Assets.xcassets */; };
+		01E720B01D1063A000160F66 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E720AF1D1063A000160F66 /* FeedTableViewCell.swift */; };
+		01E720B21D1063B300160F66 /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01E720B11D1063B300160F66 /* FeedTableViewCell.xib */; };
+		934CB61231656E21393E951F /* Pods_buzu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74428ED52B1BDF69F5678ACB /* Pods_buzu.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,11 +49,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		016F47991D0EE4EB002798B2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Controllers/MapViewController.swift; sourceTree = "<group>"; };
+		019561431D05CB48000178D1 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesViewController.swift; path = Controllers/FavoritesViewController.swift; sourceTree = "<group>"; };
+		019561451D05CB88000178D1 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedViewController.swift; path = Controllers/FeedViewController.swift; sourceTree = "<group>"; };
+		019561561D072571000178D1 /* PlaceholderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderTableViewCell.swift; path = Controllers/Cells/PlaceholderTableViewCell.swift; sourceTree = "<group>"; };
+		019561581D072585000178D1 /* PlaceholderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlaceholderTableViewCell.xib; path = Controllers/Cells/PlaceholderTableViewCell.xib; sourceTree = "<group>"; };
+		01ACE7E31D129E7900F3A65A /* buzu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "buzu-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		01AD7EB41CDCD57300211144 /* buzu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buzu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01AD7EB71CDCD57300211144 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		01AD7EB91CDCD57300211144 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		01AD7EBC1CDCD57300211144 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		01AD7EBE1CDCD57300211144 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01AD7EC11CDCD57300211144 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01AD7EC31CDCD57300211144 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01AD7EC81CDCD57300211144 /* buzuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = buzuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +66,20 @@
 		01AD7ED31CDCD57300211144 /* buzuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = buzuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01AD7ED71CDCD57300211144 /* buzuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buzuUITests.swift; sourceTree = "<group>"; };
 		01AD7ED91CDCD57300211144 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01AD7EE61CDCD8E400211144 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceManager.swift; path = Services/ServiceManager.swift; sourceTree = "<group>"; };
+		01AD7EE81CDCD91000211144 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Services/Constants.swift; sourceTree = "<group>"; };
+		01AD7EF01CE088F900211144 /* BZTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BZTabBarController.swift; sourceTree = "<group>"; };
+		01C648131D0EF401008BF607 /* BusAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusAnnotation.swift; path = Controllers/Annotation/BusAnnotation.swift; sourceTree = "<group>"; };
+		01E0F1D61CE22D86009B2147 /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppManager.swift; path = Services/AppManager.swift; sourceTree = "<group>"; };
+		01E0F1D91CE33A41009B2147 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Controllers/SearchViewController.swift; sourceTree = "<group>"; };
+		01E0F1DB1CE33A7D009B2147 /* BusLaneTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BusLaneTableViewCell.xib; path = Controllers/Cells/BusLaneTableViewCell.xib; sourceTree = "<group>"; };
+		01E0F1DD1CE33A8A009B2147 /* BusLaneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BusLaneTableViewCell.swift; path = Controllers/Cells/BusLaneTableViewCell.swift; sourceTree = "<group>"; };
+		01E720A91D104F7F00160F66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		01E720AF1D1063A000160F66 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedTableViewCell.swift; path = Controllers/Cells/FeedTableViewCell.swift; sourceTree = "<group>"; };
+		01E720B11D1063B300160F66 /* FeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FeedTableViewCell.xib; path = Controllers/Cells/FeedTableViewCell.xib; sourceTree = "<group>"; };
+		74428ED52B1BDF69F5678ACB /* Pods_buzu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buzu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B5EC33B1AFAE2E61862B714 /* Pods-buzu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-buzu/Pods-buzu.debug.xcconfig"; sourceTree = "<group>"; };
+		E63D9FEBF0DB337C22C4D225 /* Pods-buzu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buzu.release.xcconfig"; path = "Pods/Target Support Files/Pods-buzu/Pods-buzu.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				934CB61231656E21393E951F /* Pods_buzu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +108,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		019561471D06C898000178D1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				01ACE7E31D129E7900F3A65A /* buzu-Bridging-Header.h */,
+				01AD7EB71CDCD57300211144 /* AppDelegate.swift */,
+				01AD7EF01CE088F900211144 /* BZTabBarController.swift */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
 		01AD7EAB1CDCD57300211144 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +125,8 @@
 				01AD7ECB1CDCD57300211144 /* buzuTests */,
 				01AD7ED61CDCD57300211144 /* buzuUITests */,
 				01AD7EB51CDCD57300211144 /* Products */,
+				1DD6EBF43AFB029BEAF7A650 /* Pods */,
+				AD43FCCE3C4A9BF986E42F57 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,10 +143,11 @@
 		01AD7EB61CDCD57300211144 /* buzu */ = {
 			isa = PBXGroup;
 			children = (
-				01AD7EB71CDCD57300211144 /* AppDelegate.swift */,
-				01AD7EB91CDCD57300211144 /* ViewController.swift */,
+				01E720A91D104F7F00160F66 /* Assets.xcassets */,
+				019561471D06C898000178D1 /* App */,
+				01AD7EE51CDCD8CB00211144 /* Service */,
+				01AD7EEC1CDCDF5300211144 /* Controllers */,
 				01AD7EBB1CDCD57300211144 /* Main.storyboard */,
-				01AD7EBE1CDCD57300211144 /* Assets.xcassets */,
 				01AD7EC01CDCD57300211144 /* LaunchScreen.storyboard */,
 				01AD7EC31CDCD57300211144 /* Info.plist */,
 			);
@@ -125,6 +172,99 @@
 			path = buzuUITests;
 			sourceTree = "<group>";
 		};
+		01AD7EE51CDCD8CB00211144 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				01AD7EE81CDCD91000211144 /* Constants.swift */,
+				01E0F1D61CE22D86009B2147 /* AppManager.swift */,
+				01AD7EE61CDCD8E400211144 /* ServiceManager.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		01AD7EEC1CDCDF5300211144 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01C648121D0EF3D5008BF607 /* Annotation */,
+				01E0F1D81CE33981009B2147 /* Cells */,
+				01AD7EED1CDCDF5B00211144 /* Views */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		01AD7EED1CDCDF5B00211144 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				019561431D05CB48000178D1 /* FavoritesViewController.swift */,
+				01E0F1D91CE33A41009B2147 /* SearchViewController.swift */,
+				019561451D05CB88000178D1 /* FeedViewController.swift */,
+				016F47991D0EE4EB002798B2 /* MapViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		01C648121D0EF3D5008BF607 /* Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				01C648131D0EF401008BF607 /* BusAnnotation.swift */,
+			);
+			name = Annotation;
+			sourceTree = "<group>";
+		};
+		01E0F1D81CE33981009B2147 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				01E720AD1D10637D00160F66 /* Placeholder */,
+				01E720AE1D10638400160F66 /* BusLane */,
+				01E720B31D1063B800160F66 /* Feed */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		01E720AD1D10637D00160F66 /* Placeholder */ = {
+			isa = PBXGroup;
+			children = (
+				019561561D072571000178D1 /* PlaceholderTableViewCell.swift */,
+				019561581D072585000178D1 /* PlaceholderTableViewCell.xib */,
+			);
+			name = Placeholder;
+			sourceTree = "<group>";
+		};
+		01E720AE1D10638400160F66 /* BusLane */ = {
+			isa = PBXGroup;
+			children = (
+				01E0F1DD1CE33A8A009B2147 /* BusLaneTableViewCell.swift */,
+				01E0F1DB1CE33A7D009B2147 /* BusLaneTableViewCell.xib */,
+			);
+			name = BusLane;
+			sourceTree = "<group>";
+		};
+		01E720B31D1063B800160F66 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				01E720AF1D1063A000160F66 /* FeedTableViewCell.swift */,
+				01E720B11D1063B300160F66 /* FeedTableViewCell.xib */,
+			);
+			name = Feed;
+			sourceTree = "<group>";
+		};
+		1DD6EBF43AFB029BEAF7A650 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8B5EC33B1AFAE2E61862B714 /* Pods-buzu.debug.xcconfig */,
+				E63D9FEBF0DB337C22C4D225 /* Pods-buzu.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AD43FCCE3C4A9BF986E42F57 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74428ED52B1BDF69F5678ACB /* Pods_buzu.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +272,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01AD7EDC1CDCD57300211144 /* Build configuration list for PBXNativeTarget "buzu" */;
 			buildPhases = (
+				0850BDF3EE1188424F67EB87 /* Check Pods Manifest.lock */,
 				01AD7EB01CDCD57300211144 /* Sources */,
 				01AD7EB11CDCD57300211144 /* Frameworks */,
 				01AD7EB21CDCD57300211144 /* Resources */,
+				65CE5AC828FE79B83D27FF09 /* Embed Pods Frameworks */,
+				79556FD9E12C50793EE6FAF9 /* Copy Pods Resources */,
+				01376DEC1D115FCB0010123C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -193,6 +337,7 @@
 				TargetAttributes = {
 					01AD7EB31CDCD57300211144 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = YR5U8QDANM;
 					};
 					01AD7EC71CDCD57300211144 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -230,8 +375,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				01AD7EC21CDCD57300211144 /* LaunchScreen.storyboard in Resources */,
-				01AD7EBF1CDCD57300211144 /* Assets.xcassets in Resources */,
+				01E0F1DC1CE33A7D009B2147 /* BusLaneTableViewCell.xib in Resources */,
 				01AD7EBD1CDCD57300211144 /* Main.storyboard in Resources */,
+				01E720B21D1063B300160F66 /* FeedTableViewCell.xib in Resources */,
+				019561591D072585000178D1 /* PlaceholderTableViewCell.xib in Resources */,
+				01E720AA1D104F7F00160F66 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,13 +399,85 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		01376DEC1D115FCB0010123C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 0db5d17aa276ce4e5f5a8cd0a9fea262fce6eb90 349afda0c2c7531e9e2a46d11ba176f5a7d351a7c46ebc30bf36df998ec13ae1";
+		};
+		0850BDF3EE1188424F67EB87 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		65CE5AC828FE79B83D27FF09 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-buzu/Pods-buzu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79556FD9E12C50793EE6FAF9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-buzu/Pods-buzu-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		01AD7EB01CDCD57300211144 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01AD7EBA1CDCD57300211144 /* ViewController.swift in Sources */,
+				016F479A1D0EE4EB002798B2 /* MapViewController.swift in Sources */,
+				01E0F1DA1CE33A41009B2147 /* SearchViewController.swift in Sources */,
+				019561571D072571000178D1 /* PlaceholderTableViewCell.swift in Sources */,
+				01C648141D0EF401008BF607 /* BusAnnotation.swift in Sources */,
+				019561461D05CB88000178D1 /* FeedViewController.swift in Sources */,
+				01E720B01D1063A000160F66 /* FeedTableViewCell.swift in Sources */,
 				01AD7EB81CDCD57300211144 /* AppDelegate.swift in Sources */,
+				01AD7EE71CDCD8E400211144 /* ServiceManager.swift in Sources */,
+				01E0F1D71CE22D86009B2147 /* AppManager.swift in Sources */,
+				01E0F1DE1CE33A8A009B2147 /* BusLaneTableViewCell.swift in Sources */,
+				019561441D05CB48000178D1 /* FavoritesViewController.swift in Sources */,
+				01AD7EF11CE088F900211144 /* BZTabBarController.swift in Sources */,
+				01AD7EE91CDCD91000211144 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +536,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -349,7 +570,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -361,6 +582,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -388,7 +610,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -397,23 +619,33 @@
 		};
 		01AD7EDD1CDCD57300211144 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B5EC33B1AFAE2E61862B714 /* Pods-buzu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = buzu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rihurla.buzu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "buzu-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		01AD7EDE1CDCD57300211144 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E63D9FEBF0DB337C22C4D225 /* Pods-buzu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = buzu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rihurla.buzu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "buzu-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -482,6 +714,7 @@
 				01AD7EDE1CDCD57300211144 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01AD7EDF1CDCD57300211144 /* Build configuration list for PBXNativeTarget "buzuTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +723,7 @@
 				01AD7EE11CDCD57300211144 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01AD7EE21CDCD57300211144 /* Build configuration list for PBXNativeTarget "buzuUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +732,7 @@
 				01AD7EE41CDCD57300211144 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

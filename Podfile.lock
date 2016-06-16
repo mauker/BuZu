@@ -1,1 +1,28 @@
+PODS:
+  - Crashlytics (3.7.1):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.7)
+  - SwiftLoader (0.2.5)
+  - SwiftyJSON (2.3.2)
+  - TwitterCore (2.2.0):
+    - Fabric
+  - TwitterKit (2.2.0):
+    - TwitterCore (= 2.2.0)
+
+DEPENDENCIES:
+  - Crashlytics
+  - Fabric
+  - SwiftLoader
+  - SwiftyJSON
+  - TwitterCore
+  - TwitterKit
+
+SPEC CHECKSUMS:
+  Crashlytics: 3cdd4c9655be68032a0cf0379e0fb5ef6af22cad
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
+  SwiftLoader: 12d7a6f661f5e9a2c9a72003e7dd6162f4ff0cc4
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  TwitterCore: 115527630bb2986954adc928b8c895a92bcd57e5
+  TwitterKit: 2c64ec342a6261ae6bab565bad85dcbbfd3888b7
+
 COCOAPODS: 0.39.0
